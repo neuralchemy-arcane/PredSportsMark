@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DeepPitch Pro — Serious Sports Prediction Engine</title>
+  <meta name="description" content="Deep statistical football analysis: last-10 form, xG blending, Poisson modeling, calibrated confidence, odds value detection." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="p-4 md:p-8">
+  <div class="max-w-7xl mx-auto space-y-6">
+
+    <!-- Header -->
+    <header class="glass rounded-3xl p-6 md:p-7">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-black tracking-tight">
+            <span class="gradient-text">DeepPitch Pro</span>
+          </h1>
+          <p class="muted mt-2 max-w-3xl">
+            Serious football prediction engine: recency-weighted last-10 form, xG blending
+            where available, Poisson score matrix, backtest calibration, dual-source odds
+            value detection, and an 80%+ confidence watchlist.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 min-w-[320px]">
+          <div class="metric-box">
+            <div class="tiny muted">API Status</div>
+            <div id="apiStatus" class="font-semibold text-sm">Waiting</div>
+          </div>
+          <div class="metric-box">
+            <div class="tiny muted">Daily Budget</div>
+            <div id="requestsLeft" class="font-semibold text-sm">—</div>
+          </div>
+          <div class="metric-box">
+            <div class="tiny muted">Watchlist</div>
+            <div id="watchCount" class="font-semibold text-sm">0</div>
+          </div>
+          <div class="metric-box">
+            <div class="tiny muted">Calibration</div>
+            <div id="calibrationStatus" class="font-semibold text-sm">Not trained</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Setup -->
+    <section class="glass rounded-3xl p-6">
+      <div class="grid xl:grid-cols-2 gap-6">
+        <div>
+          <h2 class="text-xl font-bold mb-2">🔑 API Setup</h2>
+          <p class="muted text-sm mb-4">
+            Paste your RapidAPI key (stored only in this browser, never in code).
+            The same key works for both free subscriptions:
+            <span class="font-semibold">API-Football</span> (fixtures/form/xG) and
+            <span class="font-semibold">Sports Betting Odds API</span> (odds rows).
+          </p>
+
+          <div class="flex flex-col md:flex-row gap-2">
+            <input id="apiKeyInput" type="text" placeholder="Paste your RapidAPI key..." class="flex-1 input" />
+            <button id="saveKeyBtn" class="btn px-5 py-3 rounded-xl font-semibold">Save Key & Load</button>
+          </div>
+
+          <div class="text-xs muted mt-2">
+            Free plans:
+            <a class="link" href="https://rapidapi.com/api-sports/api/api-football" target="_blank" rel="noopener">API-Football</a>
+            ·
+            <a class="link" href="https://rapidapi.com/nikitaiakovleve33/api/sports-betting-odds-api" target="_blank" rel="noopener">Sports Betting Odds API</a>
+          </div>
+
+          <button id="probeOddsBtn" class="btn px-4 py-2 rounded-xl font-semibold mt-4">
+            🔎 Probe Odds Feed (raw rows)
+          </button>
+          <pre id="probeOut" class="tiny muted mt-2 max-h-40 overflow-auto whitespace-pre-wrap"></pre>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold mb-2">📊 Backtest / Calibration</h2>
+          <p class="muted text-sm mb-4">
+            Upload a free historical CSV from football-data.co.uk to train calibration
+            and measure real accuracy + ROI. Without this the model is much weaker.
+          </p>
+          <input id="historyFile" type="file" accept=".csv,.json" class="w-full text-sm" />
+          <div class="text-xs muted mt-2">
+            Expected columns: Date, HomeTeam, AwayTeam, FTHG, FTAG, B365H, B365D, B365A
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls -->
+    <section class="flex flex-wrap gap-2">
+      <button class="tab-btn tab-active btn px-4 py-2 rounded-xl font-semibold" data-tab="live">Live</button>
+      <button class="tab-btn btn px-4 py-2 rounded-xl font-semibold" data-tab="upcoming">Upcoming</button>
+      <button class="tab-btn btn px-4 py-2 rounded-xl font-semibold" data-tab="watchlist">Watchlist</button>
+      <button class="tab-btn btn px-4 py-2 rounded-xl font-semibold" data-tab="model">Model / Backtest</button>
+      <button id="refreshBtn" class="ml-auto btn px-4 py-2 rounded-xl font-semibold">Refresh Data</button>
+    </section>
+
+    <!-- Panels -->
+    <main>
+      <section id="panel-live" class="tab-panel"></section>
+      <section id="panel-upcoming" class="tab-panel hidden"></section>
+      <section id="panel-watchlist" class="tab-panel hidden"></section>
+      <section id="panel-model" class="tab-panel hidden"></section>
+    </main>
+
+    <footer class="tiny muted text-center pb-6">
+      Educational analytics tool. No guaranteed profit. Bet responsibly.
+    </footer>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 hidden z-50 bg-black/80 backdrop-blur-sm overflow-y-auto p-4">
+    <div class="max-w-5xl mx-auto my-8 glass rounded-3xl p-6 relative">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-2xl text-gray-400 hover:text-white">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/oddsFeed.js"></script>
+  <script src="js/model.js"></script>
+  <script src="js/backtest.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

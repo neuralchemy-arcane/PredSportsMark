@@ -1,0 +1,99 @@
+:root {
+  --bg: #070b14;
+  --panel: rgba(255,255,255,0.045);
+  --border: rgba(255,255,255,0.09);
+}
+
+body {
+  background:
+    radial-gradient(1200px 500px at 15% -10%, rgba(59,130,246,0.16), transparent),
+    radial-gradient(1000px 500px at 90% 0%, rgba(16,185,129,0.12), transparent),
+    var(--bg);
+  color: #e5e7eb;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+
+.glass {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #34d399, #60a5fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.muted { color: #9ca3af; }
+.tiny  { font-size: 11px; }
+
+.card { transition: transform .16s ease, border-color .16s ease; }
+.card:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.18); }
+
+.watch {
+  border: 1px solid rgba(16,185,129,0.42);
+  box-shadow: 0 0 18px rgba(16,185,129,0.10);
+}
+
+.metric-box {
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.input {
+  background: rgba(0,0,0,0.30);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 12px;
+  padding: 12px 14px;
+  color: white;
+  outline: none;
+}
+.input:focus { border-color: #34d399; }
+
+.btn {
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05);
+  transition: .15s ease;
+  color: white;
+}
+.btn:hover { background: rgba(255,255,255,0.09); }
+
+.tab-active {
+  background: linear-gradient(135deg, #10b981, #2563eb);
+  color: white;
+}
+
+.team-logo { width: 34px; height: 34px; object-fit: contain; }
+
+.pill {
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  display: inline-block;
+}
+
+.bar-track { height: 10px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden; }
+.bar-fill  { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #10b981, #3b82f6); }
+
+.spinner {
+  width: 42px; height: 42px;
+  border: 3px solid rgba(255,255,255,0.15);
+  border-top-color: #34d399;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+input[type="file"]::file-selector-button {
+  margin-right: 10px; border: 0;
+  background: #111827; color: white;
+  padding: 8px 12px; border-radius: 10px; cursor: pointer;
+}
+
+.link { color: #34d399; text-decoration: underline; }
