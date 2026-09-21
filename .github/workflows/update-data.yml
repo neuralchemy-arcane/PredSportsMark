@@ -2,8 +2,8 @@ name: update-data
 
 on:
   schedule:
-    - cron: '0 6 */2 * *'
-  workflow_dispatch: {}
+    - cron: '0 6 */2 * *'   # every 2 days at 06:00 UTC
+  workflow_dispatch: {}      # manual "Run workflow" button
 
 permissions:
   contents: write
@@ -24,6 +24,8 @@ jobs:
           RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
           LEAGUE_KGMID: ${{ vars.LEAGUE_KGMID }}
           MAX_TEAMS: ${{ vars.MAX_TEAMS }}
+          TYPE_LEAGUE: ${{ vars.TYPE_LEAGUE }}
+          TYPE_TEAM: ${{ vars.TYPE_TEAM }}
         run: node tools/fetch-data.mjs
 
       - name: Commit data
