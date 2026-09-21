@@ -1,0 +1,25 @@
+{
+  "search_metadata": {
+    "id": "6ab133ecb9dbc42012ff4f7d",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/j3j6TWons7ApY_oLJZ0Vnij_uNcjWFWxDZ1AsfuhvGk/6ab133ecb9dbc42012ff4f7d.json",
+    "markdown_endpoint": "https://serpapi.com/searches/j3j6TWons7ApY_oLJZ0Vnij_uNcjWFWxDZ1AsfuhvGk/6ab133ecb9dbc42012ff4f7d.md",
+    "created_at": "2026-09-21 13:41:00 UTC",
+    "processed_at": "2026-09-21 13:41:00 UTC",
+    "google_sports_url": "https://www.google.com/search?kgmid=/m/02_tc&sourceid=chrome&ie=UTF-8&hl=en#sie=m;/m/02_tc;2;/m/02_tc;dt;fp;1;;;;-1",
+    "raw_html_file": "https://serpapi.com/searches/j3j6TWons7ApY_oLJZ0Vnij_uNcjWFWxDZ1AsfuhvGk/6ab133ecb9dbc42012ff4f7d.html",
+    "prettify_html_file": "https://serpapi.com/searches/j3j6TWons7ApY_oLJZ0Vnij_uNcjWFWxDZ1AsfuhvGk/6ab133ecb9dbc42012ff4f7d.prettify",
+    "total_time_taken": 1.84
+  },
+  "search_parameters": {
+    "engine": "google_sports",
+    "kgmid": "/m/02_tc",
+    "sp": "ft",
+    "type": "game",
+    "hl": "en"
+  },
+  "search_information": {
+    "game_results_state": "Fully empty"
+  },
+  "error": "Google Sports hasn't returned any results for this search."
+}
