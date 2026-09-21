@@ -3,65 +3,64 @@ import fs from 'node:fs';
 const SERPAPI_KEY  = process.env.SERPAPI_KEY;
 const RAPIDAPI_KEY = process.env.RAPIDAPI_KEY || '';
 const LEAGUE_KGMID = process.env.LEAGUE_KGMID || '/m/02_tc'; // Premier League
-const SPORT        = process.env.SPORT || 'football';
+const SPORT        = process.env.SPORT || 'ft';              // proven by your sample
 const MAX_TEAMS    = parseInt(process.env.MAX_TEAMS || '10', 10);
+const TYPE_LEAGUE  = process.env.TYPE_LEAGUE || '';  // pin once discovered
+const TYPE_TEAM    = process.env.TYPE_TEAM || '';    // pin once discovered
 
-if (!SERPAPI_KEY) {
-  console.error('FATAL: SERPAPI_KEY secret is missing.');
-  process.exit(1);
-}
+const LEAGUE_TYPE_CANDIDATES = ['schedule', 'results', 'standings', 'games'];
+const TEAM_TYPE_CANDIDATES   = ['results', 'schedule', 'games'];
 
+if (!SERPAPI_KEY) { console.error('FATAL: SERPAPI_KEY secret is missing.'); process.exit(1); }
 fs.mkdirSync('data', { recursive: true });
+
+class Fatal extends Error {}
+const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 async function serp(params) {
   const url = new URL('https://serpapi.com/search.json');
   url.searchParams.set('engine', 'google_sports');
   url.searchParams.set('hl', 'en');
-  url.searchParams.set('sp', SPORT);
   for (const [k, v] of Object.entries(params)) url.searchParams.set(k, v);
   url.searchParams.set('api_key', SERPAPI_KEY);
 
   const res = await fetch(url);
-  if (!res.ok) throw new Error(`SerpApi HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
-  return res.json();
+  const body = await res.text();
+
+  if (!res.ok) {
+    const snippet = body.slice(0, 200);
+    if ([401, 403, 429].includes(res.status)) throw new Fatal(`SerpApi HTTP ${res.status}: ${snippet}`);
+    const e = new Error(`SerpApi HTTP ${res.status}: ${snippet}`);
+    e.retryable = true;
+    throw e;
+  }
+  return JSON.parse(body);
 }
 
-/* Defensive walker: finds anything that looks like a game anywhere in the payload */
 function collectGames(node, out = [], depth = 0) {
   if (depth > 6 || node == null) return out;
-
-  if (Array.isArray(node)) {
-    node.forEach(v => collectGames(v, out, depth + 1));
-    return out;
-  }
-
+  if (Array.isArray(node)) { node.forEach(v => collectGames(v, out, depth + 1)); return out; }
   if (typeof node === 'object') {
     const looksLikeGame =
       (Array.isArray(node.teams) && node.teams.length === 2) ||
       (node.home_team && node.away_team) ||
       (node.status && (node.start_time || node.date) && (node.teams || node.home_team));
-
     if (looksLikeGame) out.push(node);
     else Object.values(node).forEach(v => collectGames(v, out, depth + 1));
   }
-
   return out;
 }
 
 function normGame(g) {
   let home, away, hs, as;
-
   if (Array.isArray(g.teams) && g.teams.length === 2) {
     [home, away] = g.teams;
     hs = home.score ?? home.score_original ?? null;
     as = away.score ?? away.score_original ?? null;
   } else {
-    home = g.home_team || {};
-    away = g.away_team || {};
-    hs = g.home_score ?? null;
-    as = g.away_score ?? null;
+    home = g.home_team || {}; away = g.away_team || {};
+    hs = g.home_score ?? null; as = g.away_score ?? null;
   }
-
   return {
     date: g.start_time || g.date || null,
     status: g.status || g.status_original || null,
@@ -72,31 +71,58 @@ function normGame(g) {
   };
 }
 
-async function main() {
-  const meta = { generatedAt: new Date().toISOString(), searches: 0 };
+const isValid   = g => g.home.name && g.away.name;
+const isPlayed  = g => isValid(g) && g.homeGoals != null && g.awayGoals != null;
 
-  /* 1) League page → schedule + recent results */
-  const leagueRaw = await serp({ kgmid: LEAGUE_KGMID });
-  meta.searches += 1;
-
-  const leagueGames = collectGames(leagueRaw)
-    .map(normGame)
-    .filter(g => g.home.name && g.away.name);
-
-  // de-duplicate
+function dedupe(games) {
   const seen = new Set();
-  const games = leagueGames.filter(g => {
+  return games.filter(g => {
     const k = `${g.home.name}|${g.away.name}|${g.date}`;
     if (seen.has(k)) return false;
-    seen.add(k);
-    return true;
+    seen.add(k); return true;
   });
+}
+
+function shapeForm(rows, kgmid, name) {
+  return rows.sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 10).map(g => ({
+    date: g.date,
+    home: g.home.name, away: g.away.name,
+    homeGoals: g.homeGoals, awayGoals: g.awayGoals,
+    teamIsHome: (g.home.kgmid === kgmid) || (g.home.name === name)
+  }));
+}
+
+async function main() {
+  const meta = { generatedAt: new Date().toISOString(), searches: 0, leagueType: null, teamType: null };
+
+  /* ---- LEAGUE: discover working `type` ---- */
+  let leagueRaw = null;
+  let games = [];
+
+  for (const type of (TYPE_LEAGUE ? [TYPE_LEAGUE] : LEAGUE_TYPE_CANDIDATES)) {
+    try {
+      leagueRaw = await serp({ kgmid: LEAGUE_KGMID, sp: SPORT, type });
+      meta.searches++;
+      const g = dedupe(collectGames(leagueRaw).map(normGame).filter(isValid));
+      console.log(`league type=${type} → 200 OK, ${g.length} games found`);
+      if (g.length) { games = g; meta.leagueType = type; break; }
+    } catch (e) {
+      if (e instanceof Fatal) throw e;
+      console.warn(`league type=${type} → ${e.message}`);
+    }
+  }
+
+  if (!leagueRaw) throw new Error('League fetch failed for every type candidate. Check kgmid/secret.');
+  if (!games.length) {
+    console.warn('WARNING: league payload contained 0 games. Top-level keys: ' + Object.keys(leagueRaw).join(', '));
+    console.warn('Inspect data/raw-sample.json after this run.');
+  }
 
   const now = Date.now();
   const upcoming = games.filter(g => g.date && new Date(g.date).getTime() >= now - 3 * 3600e3);
-  const finished = games.filter(g => g.homeGoals != null && g.awayGoals != null);
+  const finished = games.filter(isPlayed);
 
-  /* 2) Team pages → last-10 form for teams in upcoming fixtures */
+  /* ---- TEAMS: discover team `type` once, reuse ---- */
   const teamIds = new Map();
   for (const g of upcoming) {
     if (g.home.kgmid) teamIds.set(g.home.kgmid, g.home.name);
@@ -104,36 +130,39 @@ async function main() {
   }
 
   const form = {};
+  let teamType = TYPE_TEAM || null;
   let teamsDone = 0;
 
   for (const [kgmid, name] of [...teamIds.entries()].slice(0, MAX_TEAMS)) {
     try {
-      const teamRaw = await serp({ kgmid });
-      meta.searches += 1;
-      teamsDone += 1;
-
-      const played = collectGames(teamRaw)
-        .map(normGame)
-        .filter(g => g.home.name && g.away.name && g.homeGoals != null && g.awayGoals != null)
-        .sort((a, b) => new Date(b.date) - new Date(a.date))
-        .slice(0, 10);
-
-      form[name] = played.map(g => ({
-        date: g.date,
-        home: g.home.name,
-        away: g.away.name,
-        homeGoals: g.homeGoals,
-        awayGoals: g.awayGoals,
-        teamIsHome: (g.home.kgmid === kgmid) || (g.home.name === name)
-      }));
-
-      await new Promise(r => setTimeout(r, 400));
+      if (!teamType) {
+        for (const t of TEAM_TYPE_CANDIDATES) {
+          const raw = await serp({ kgmid, sp: SPORT, type: t });
+          meta.searches++;
+          const rows = collectGames(raw).map(normGame).filter(isPlayed);
+          console.log(`team type=${t} → 200 OK, ${rows.length} played games`);
+          if (rows.length) {
+            teamType = t;
+            meta.teamType = t;
+            form[name] = shapeForm(rows, kgmid, name);
+            teamsDone++;
+            break;
+          }
+        }
+      } else {
+        const raw = await serp({ kgmid, sp: SPORT, type: teamType });
+        meta.searches++;
+        const rows = collectGames(raw).map(normGame).filter(isPlayed);
+        if (rows.length) { form[name] = shapeForm(rows, kgmid, name); teamsDone++; }
+      }
+      await sleep(400);
     } catch (e) {
+      if (e instanceof Fatal) throw e;
       console.warn(`team "${name}" failed: ${e.message}`);
     }
   }
 
-  /* 3) Odds snapshot (RapidAPI, server-side → no CORS issue) */
+  /* ---- ODDS (RapidAPI, optional) ---- */
   let oddsRows = [];
   if (RAPIDAPI_KEY) {
     try {
@@ -144,27 +173,16 @@ async function main() {
           'x-rapidapi-key': RAPIDAPI_KEY,
           'x-rapidapi-host': 'sports-betting-odds-api.p.rapidapi.com'
         },
-        body: JSON.stringify({
-          mode: 'odds',
-          leagues: ['epl'],
-          daysAhead: 7,
-          markets: ['moneyline'],
-          maxItems: 50
-        })
+        body: JSON.stringify({ mode: 'odds', leagues: ['epl'], daysAhead: 7, markets: ['moneyline'], maxItems: 50 })
       });
-
       if (res.ok) {
         const j = await res.json();
         oddsRows = Array.isArray(j) ? j : (j.rows || j.data || j.items || j.results || []);
-      } else {
-        console.warn(`odds HTTP ${res.status}`);
-      }
-    } catch (e) {
-      console.warn('odds failed:', e.message);
-    }
+      } else console.warn(`odds HTTP ${res.status}`);
+    } catch (e) { console.warn('odds failed:', e.message); }
   }
 
-  /* 4) Write outputs */
+  /* ---- WRITE ---- */
   fs.writeFileSync('data/fixtures.json', JSON.stringify(upcoming, null, 2));
   fs.writeFileSync('data/results.json',  JSON.stringify(finished.slice(0, 60), null, 2));
   fs.writeFileSync('data/form.json',     JSON.stringify(form, null, 2));
@@ -172,10 +190,11 @@ async function main() {
   fs.writeFileSync('data/meta.json',     JSON.stringify({ ...meta, teamsDone }, null, 2));
   fs.writeFileSync('data/raw-sample.json', JSON.stringify(collectGames(leagueRaw).slice(0, 2), null, 2));
 
-  console.log(`OK: ${upcoming.length} upcoming, ${Object.keys(form).length} team forms, ${oddsRows.length} odds rows, ${meta.searches} SerpApi searches`);
+  console.log(`SUMMARY: leagueType=${meta.leagueType} teamType=${meta.teamType} upcoming=${upcoming.length} forms=${teamsDone} odds=${oddsRows.length} searches=${meta.searches}`);
+  console.log('TIP: pin the discovered types in Settings → Variables → TYPE_LEAGUE / TYPE_TEAM to skip discovery next run.');
 }
 
 main().catch(e => {
-  console.error(e);
+  console.error('RUN FAILED:', e.message);
   process.exit(1);
 });
