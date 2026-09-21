@@ -5,7 +5,9 @@ const DPApp = {
     fixturesById: {},
     analyses: {},
     watchlist: [],
-    backtest: null
+    backtest: null,
+    pipelineForm: null,
+    pipelineMeta: null
   },
 
   init() {
@@ -56,15 +58,12 @@ const DPApp = {
     });
 
     const savedKey = DPStorage.getApiKey();
-    if (savedKey) {
-      document.getElementById('apiKeyInput').value = savedKey;
-      this.refreshAll();
-    }
+    if (savedKey) document.getElementById('apiKeyInput').value = savedKey;
 
     const savedMetrics = DPStorage.getBacktestMetrics();
     if (savedMetrics) this.state.backtest = savedMetrics;
 
-    this.renderAll();
+    this.refreshAll();
   },
 
   switchTab(tab) {
@@ -81,9 +80,14 @@ const DPApp = {
       DPStorage.getCalibration().length ? 'Trained' : 'Not trained';
 
     const apiStatus = document.getElementById('apiStatus');
-    if (!DPStorage.getApiKey()) { apiStatus.textContent = 'No API key'; return; }
-    if (DPStorage.requestsLeft() <= 0) { apiStatus.textContent = 'Budget exhausted'; return; }
-    apiStatus.textContent = 'Ready';
+    const pipe = this.state.pipelineMeta ? 'Pipeline · ' : '';
+
+    if (!DPStorage.getApiKey()) {
+      apiStatus.textContent = this.state.pipelineMeta ? pipe + 'Ready (no key)' : 'No API key';
+      return;
+    }
+    if (DPStorage.requestsLeft() <= 0) { apiStatus.textContent = pipe + 'Budget exhausted'; return; }
+    apiStatus.textContent = pipe + 'Ready';
   },
 
   registerFixtures(list) {
@@ -111,6 +115,22 @@ const DPApp = {
     return String(value || '').replace(/[&<>"']/g, c => ({
       '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
     }[c]));
+  },
+
+  summarizeHistoryRows(rows, teamKey) {
+    return rows.slice().reverse().map(r => {
+      const isHome = r.home === teamKey;
+      const scored = isHome ? r.homeGoals : r.awayGoals;
+      const conceded = isHome ? r.awayGoals : r.homeGoals;
+      return {
+        date: r.date,
+        opponent: isHome ? r.away : r.home,
+        scored,
+        conceded,
+        result: scored > conceded ? 'W' : scored === conceded ? 'D' : 'L',
+        venue: isHome ? 'H' : 'A'
+      };
+    });
   },
 
   cardHtml(fixture) {
@@ -175,12 +195,12 @@ const DPApp = {
 
         <div class="flex items-center justify-between gap-3">
           <div class="flex-1 text-center">
-            <img src="${this.esc(home.logo)}" class="team-logo mx-auto mb-1" onerror="this.style.display='none'" alt="" />
+            ${home.logo ? `<img src="${this.esc(home.logo)}" class="team-logo mx-auto mb-1" onerror="this.style.display='none'" alt="" />` : ''}
             <div class="text-sm font-semibold leading-tight">${this.esc(home.name)}</div>
           </div>
           <div class="text-2xl font-black">${score}</div>
           <div class="flex-1 text-center">
-            <img src="${this.esc(away.logo)}" class="team-logo mx-auto mb-1" onerror="this.style.display='none'" alt="" />
+            ${away.logo ? `<img src="${this.esc(away.logo)}" class="team-logo mx-auto mb-1" onerror="this.style.display='none'" alt="" />` : ''}
             <div class="text-sm font-semibold leading-tight">${this.esc(away.name)}</div>
           </div>
         </div>
@@ -273,8 +293,10 @@ const DPApp = {
 
   renderAll() {
     this.updateWatchlist();
-    this.renderCards(this.state.live, '#panel-live', 'No live fixtures found.');
-    this.renderCards(this.state.upcoming, '#panel-upcoming', 'No upcoming fixtures found.');
+    this.renderCards(this.state.live, '#panel-live', this.state.pipelineMeta
+      ? 'Pipeline mode: live scores require an API-Football key. Upcoming fixtures below are from the pipeline.'
+      : 'No live fixtures found.');
+    this.renderCards(this.state.upcoming, '#panel-upcoming', 'No upcoming fixtures found. Run the GitHub Actions workflow or add an API key.');
     this.renderCards(this.state.watchlist, '#panel-watchlist', 'No fixtures currently meet the serious watchlist threshold.');
     this.renderModelPanel();
     this.updateStatus();
@@ -282,7 +304,7 @@ const DPApp = {
 
   async analyzeFixture(fixture, { withOdds = true } = {}) {
     const id = fixture.fixture.id;
-    const cacheKey = 'analysis_v3|' + id;
+    const cacheKey = 'analysis_v4|' + id;
 
     const cached = DPStorage.cacheGet(cacheKey, 30 * 60 * 1000);
     if (cached) {
@@ -293,13 +315,29 @@ const DPApp = {
       return cached;
     }
 
-    const [homeLast, awayLast] = await Promise.all([
-      DPApi.fetchTeamLast(fixture.teams.home.id),
-      DPApi.fetchTeamLast(fixture.teams.away.id)
-    ]);
+    let homeForm, awayForm, homeLast = [], awayLast = [];
 
-    const homeForm = DPModel.formFromApi(homeLast, fixture.teams.home.id);
-    const awayForm = DPModel.formFromApi(awayLast, fixture.teams.away.id);
+    /* FORM SOURCE 1: pipeline (free, zero API calls) */
+    const pf = DPPipeline.findForm(fixture.teams.home.name);
+    const pa = DPPipeline.findForm(fixture.teams.away.name);
+
+    if (pf?.rows?.length && pa?.rows?.length) {
+      homeForm = DPModel.formFromHistory(pf.rows, pf.key);
+      awayForm = DPModel.formFromHistory(pa.rows, pa.key);
+      homeLast = this.summarizeHistoryRows(pf.rows, pf.key);
+      awayLast = this.summarizeHistoryRows(pa.rows, pa.key);
+    } else {
+      /* FORM SOURCE 2: API-Football last-10 (needs key + subscription) */
+      const [hl, al] = await Promise.all([
+        DPApi.fetchTeamLast(fixture.teams.home.id),
+        DPApi.fetchTeamLast(fixture.teams.away.id)
+      ]);
+      homeLast = DPModel.summarizeLast(hl, fixture.teams.home.id);
+      awayLast = DPModel.summarizeLast(al, fixture.teams.away.id);
+      homeForm = DPModel.formFromApi(hl, fixture.teams.home.id);
+      awayForm = DPModel.formFromApi(al, fixture.teams.away.id);
+    }
+
     const prediction = DPModel.predictFromForms(homeForm, awayForm);
 
     let odds = null;
@@ -307,11 +345,11 @@ const DPApp = {
 
     if (withOdds && prediction.calibratedProb >= 0.65) {
       try {
-        // 1) Free Sports Betting Odds API daily snapshot (no per-match cost)
+        // Odds source 1: injected pipeline rows / cached snapshot
         odds = await DPOddsFeed.matchOdds(fixture);
 
-        // 2) Fallback: API-Football odds endpoint
-        if (!odds && DPStorage.requestsLeft() > 3) {
+        // Odds source 2: API-Football (only if key exists)
+        if (!odds && DPStorage.getApiKey() && DPStorage.requestsLeft() > 3) {
           odds = DPModel.parseOdds(await DPApi.fetchOdds(id));
         }
 
@@ -325,8 +363,7 @@ const DPApp = {
       fixtureId: id,
       updatedAt: Date.now(),
       homeForm, awayForm, prediction, odds, value,
-      homeLast: DPModel.summarizeLast(homeLast, fixture.teams.home.id),
-      awayLast: DPModel.summarizeLast(awayLast, fixture.teams.away.id),
+      homeLast, awayLast,
       watchlist: false
     };
 
@@ -356,35 +393,51 @@ const DPApp = {
   },
 
   async autoAnalyze() {
-    const candidates = [...this.state.live, ...this.state.upcoming].slice(0, DP_CONFIG.AUTO_ANALYZE_LIMIT);
+    const pipelineMode = !!this.state.pipelineForm;
+    const limit = pipelineMode ? 20 : DP_CONFIG.AUTO_ANALYZE_LIMIT;
+    const candidates = [...this.state.live, ...this.state.upcoming].slice(0, limit);
 
     for (const fixture of candidates) {
-      if (DPStorage.requestsLeft() < 5) break;
+      if (!pipelineMode && DPStorage.requestsLeft() < 5) break;
       try {
         await this.analyzeFixture(fixture, { withOdds: true });
       } catch (error) {
         console.warn('Analysis failed', fixture.fixture.id, error.message);
       }
-      await new Promise(r => setTimeout(r, 180));
+      await new Promise(r => setTimeout(r, 120));
     }
   },
 
   async refreshAll() {
-    if (!DPStorage.getApiKey()) { alert('Add your free RapidAPI key first.'); return; }
-
     try {
       document.getElementById('apiStatus').textContent = 'Loading...';
 
-      const [live, upcoming] = await Promise.all([
-        DPApi.fetchLive().catch(() => []),
-        DPApi.fetchUpcoming().catch(() => [])
-      ]);
+      /* 1) PIPELINE: static JSON committed by GitHub Actions */
+      const pipe = await DPPipeline.tryLoad();
+      this.state.pipelineForm = pipe ? pipe.form : null;
+      this.state.pipelineMeta = pipe ? pipe.meta : null;
 
-      this.state.live = live;
-      this.state.upcoming = upcoming;
-      this.registerFixtures([...live, ...upcoming]);
+      if (pipe) {
+        if (pipe.oddsRows?.length) DPOddsFeed.injectRows(pipe.oddsRows);
+        this.state.upcoming = pipe.fixtures;
+        this.registerFixtures(pipe.fixtures);
+      }
+
+      /* 2) LIVE API (optional): only if a key exists */
+      if (DPStorage.getApiKey()) {
+        const [live, apiUpcoming] = await Promise.all([
+          DPApi.fetchLive().catch(() => []),
+          DPApi.fetchUpcoming().catch(() => [])
+        ]);
+
+        if (live.length || apiUpcoming.length) {
+          this.state.live = live;
+          this.state.upcoming = apiUpcoming.length ? apiUpcoming : this.state.upcoming;
+          this.registerFixtures([...live, ...apiUpcoming]);
+        }
+      }
+
       this.renderAll();
-
       await this.autoAnalyze();
       this.renderAll();
     } catch (error) {
@@ -473,10 +526,11 @@ const DPApp = {
         <div class="glass rounded-3xl p-5">
           <h3 class="font-bold mb-2">Method</h3>
           <p class="muted text-sm leading-relaxed">
-            Attack/defense strength with recency-weighted last-10 form, shrinkage to league mean,
-            xG blending where available, Poisson score matrix with low-score correction, calibration
-            from backtests, and dual-source odds value detection (Sports Betting Odds API snapshot,
-            API-Football fallback). Watchlist requires ≥80% calibrated confidence plus positive EV.
+            Data: GitHub Actions pipeline (SerpApi Google Sports + odds snapshot) with optional
+            live API-Football overlay. Model: recency-weighted last-10 form, shrinkage to league
+            mean, xG blending where available, Poisson score matrix with low-score correction,
+            backtest calibration, and odds value detection. Watchlist requires ≥80% calibrated
+            confidence plus positive EV.
           </p>
         </div>`;
     } catch (error) {
