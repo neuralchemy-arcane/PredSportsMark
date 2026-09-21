@@ -2,7 +2,7 @@ import fs from 'node:fs';
 
 const SERPAPI_KEY  = process.env.SERPAPI_KEY;
 const RAPIDAPI_KEY = process.env.RAPIDAPI_KEY || '';
-const LEAGUE_KGMID = process.env.LEAGUE_KGMID || '/m/02_tc'; // Premier League
+const LEAGUE_KGMID = process.env.LEAGUE_KGMID || '/m/02_tc';
 const SPORT        = process.env.SPORT || 'ft';
 const MAX_TEAMS    = parseInt(process.env.MAX_TEAMS || '10', 10);
 const TYPE_LEAGUE  = process.env.TYPE_LEAGUE || '';
@@ -11,7 +11,6 @@ const TEAMS_KGMIDS = (process.env.TEAMS_KGMIDS || '')
   .split(',').map(s => s.trim()).filter(Boolean)
   .map(pair => { const [kgmid, name] = pair.split(':'); return [kgmid, name || kgmid]; });
 
-// `type` is a small enum. Your proven sample used type=game. Try shape-values first.
 const LEAGUE_TYPE_CANDIDATES = ['game', 'league', 'fixtures'];
 const TEAM_TYPE_CANDIDATES   = ['game', 'team', 'fixtures'];
 
@@ -41,37 +40,68 @@ async function serp(params) {
   return JSON.parse(body);
 }
 
+/* ---------- permissive game detection ---------- */
+function sideOf(node, which) {
+  const arr = Array.isArray(node.teams) ? node.teams : null;
+  const cand = arr ? arr[which] :
+    which === 0 ? (node.home_team ?? node.home ?? node.homeTeam ?? node.team_home)
+                : (node.away_team ?? node.away ?? node.awayTeam ?? node.team_away);
+  if (cand == null) return null;
+  if (typeof cand === 'string') return { name: cand, kgmid: null };
+  if (typeof cand === 'object') {
+    return { name: cand.name || cand.short_name || cand.title || null, kgmid: cand.kgmid || null };
+  }
+  return null;
+}
+
+function scoresOf(node) {
+  let hs = node.homeGoals ?? node.home_score ?? node.homeScore ?? null;
+  let as = node.awayGoals ?? node.away_score ?? node.awayScore ?? null;
+
+  const s = node.score ?? node.score_original ?? node.result ?? null;
+  if ((hs == null || as == null) && typeof s === 'string') {
+    const m = s.match(/(\d+)\s*[-:–]\s*(\d+)/);
+    if (m) { hs = hs ?? Number(m[1]); as = as ?? Number(m[2]); }
+  }
+
+  if (Array.isArray(node.teams) && node.teams.length === 2) {
+    hs = hs ?? node.teams[0].score ?? node.teams[0].score_original ?? null;
+    as = as ?? node.teams[1].score ?? node.teams[1].score_original ?? null;
+  }
+
+  return [hs == null ? null : Number(hs), as == null ? null : Number(as)];
+}
+
+function looksLikeGame(node) {
+  if (Array.isArray(node.teams) && node.teams.length === 2) return true;
+  const h = node.home_team ?? node.home ?? node.homeTeam ?? node.team_home;
+  const a = node.away_team ?? node.away ?? node.awayTeam ?? node.team_away;
+  if (h && a) return true;
+  if ((node.score || node.result) && (h || a)) return true;
+  if (node.status && (node.start_time || node.date) && (h || a || node.teams)) return true;
+  return false;
+}
+
 function collectGames(node, out = [], depth = 0) {
   if (depth > 6 || node == null) return out;
   if (Array.isArray(node)) { node.forEach(v => collectGames(v, out, depth + 1)); return out; }
   if (typeof node === 'object') {
-    const looksLikeGame =
-      (Array.isArray(node.teams) && node.teams.length === 2) ||
-      (node.home_team && node.away_team) ||
-      (node.status && (node.start_time || node.date) && (node.teams || node.home_team));
-    if (looksLikeGame) out.push(node);
+    if (looksLikeGame(node)) out.push(node);
     else Object.values(node).forEach(v => collectGames(v, out, depth + 1));
   }
   return out;
 }
 
 function normGame(g) {
-  let home, away, hs, as;
-  if (Array.isArray(g.teams) && g.teams.length === 2) {
-    [home, away] = g.teams;
-    hs = home.score ?? home.score_original ?? null;
-    as = away.score ?? away.score_original ?? null;
-  } else {
-    home = g.home_team || {}; away = g.away_team || {};
-    hs = g.home_score ?? null; as = g.away_score ?? null;
-  }
+  const home = sideOf(g, 0) || {};
+  const away = sideOf(g, 1) || {};
+  const [hs, as] = scoresOf(g);
   return {
-    date: g.start_time || g.date || null,
+    date: g.start_time || g.date || g.time || g.start_date || null,
     status: g.status || g.status_original || null,
-    home: { name: home.name || home.short_name || null, kgmid: home.kgmid || null },
-    away: { name: away.name || away.short_name || null, kgmid: away.kgmid || null },
-    homeGoals: hs == null ? null : Number(hs),
-    awayGoals: as == null ? null : Number(as)
+    home: { name: home.name || null, kgmid: home.kgmid || null },
+    away: { name: away.name || null, kgmid: away.kgmid || null },
+    homeGoals: hs, awayGoals: as
   };
 }
 
@@ -112,10 +142,15 @@ async function main() {
       console.log(`league type=${type} → 200 OK, ${g.length} games found`);
       if (g.length) { games = g; meta.leagueType = type; break; }
       console.warn(`league type=${type} returned 0 games. Payload keys: ${Object.keys(leagueRaw).join(', ')}`);
+      console.warn('PAYLOAD SNIPPET: ' + JSON.stringify(leagueRaw).slice(0, 800));
     } catch (e) {
       if (e instanceof Fatal) throw e;
       console.warn(`league type=${type} → ${e.message}`);
     }
+  }
+
+  if (leagueRaw) {
+    fs.writeFileSync('data/raw-payload.json', JSON.stringify(leagueRaw, null, 2).slice(0, 20000));
   }
 
   if (!leagueRaw && !TEAMS_KGMIDS.length) {
@@ -170,7 +205,6 @@ async function main() {
     }
   }
 
-  /* Safety net: build fixtures from team pages if league tab gave nothing */
   if (!upcoming.length && unplayedFromTeams.length) {
     upcoming = dedupe(unplayedFromTeams).filter(g => new Date(g.date).getTime() >= now - 3 * 3600e3);
     console.log(`league tab empty → built ${upcoming.length} upcoming fixtures from team pages`);
@@ -206,7 +240,6 @@ async function main() {
 
   console.log(`SUMMARY: leagueType=${meta.leagueType} teamType=${meta.teamType} upcoming=${upcoming.length} forms=${teamsDone} odds=${oddsRows.length} searches=${meta.searches}`);
   console.log('TIP: pin discovered types via Settings → Variables → TYPE_LEAGUE / TYPE_TEAM.');
-  console.log('If types were wrong, discover manually: SerpApi dashboard → Your Playground → engine=google_sports, kgmid=..., sp=ft, type=???');
 }
 
 main().catch(e => {
