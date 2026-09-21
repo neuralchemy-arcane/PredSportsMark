@@ -3,13 +3,17 @@ import fs from 'node:fs';
 const SERPAPI_KEY  = process.env.SERPAPI_KEY;
 const RAPIDAPI_KEY = process.env.RAPIDAPI_KEY || '';
 const LEAGUE_KGMID = process.env.LEAGUE_KGMID || '/m/02_tc'; // Premier League
-const SPORT        = process.env.SPORT || 'ft';              // proven by your sample
+const SPORT        = process.env.SPORT || 'ft';
 const MAX_TEAMS    = parseInt(process.env.MAX_TEAMS || '10', 10);
-const TYPE_LEAGUE  = process.env.TYPE_LEAGUE || '';  // pin once discovered
-const TYPE_TEAM    = process.env.TYPE_TEAM || '';    // pin once discovered
+const TYPE_LEAGUE  = process.env.TYPE_LEAGUE || '';
+const TYPE_TEAM    = process.env.TYPE_TEAM || '';
+const TEAMS_KGMIDS = (process.env.TEAMS_KGMIDS || '')
+  .split(',').map(s => s.trim()).filter(Boolean)
+  .map(pair => { const [kgmid, name] = pair.split(':'); return [kgmid, name || kgmid]; });
 
-const LEAGUE_TYPE_CANDIDATES = ['schedule', 'results', 'standings', 'games'];
-const TEAM_TYPE_CANDIDATES   = ['results', 'schedule', 'games'];
+// `type` is a small enum. Your proven sample used type=game. Try shape-values first.
+const LEAGUE_TYPE_CANDIDATES = ['game', 'league', 'fixtures'];
+const TEAM_TYPE_CANDIDATES   = ['game', 'team', 'fixtures'];
 
 if (!SERPAPI_KEY) { console.error('FATAL: SERPAPI_KEY secret is missing.'); process.exit(1); }
 fs.mkdirSync('data', { recursive: true });
@@ -71,8 +75,9 @@ function normGame(g) {
   };
 }
 
-const isValid   = g => g.home.name && g.away.name;
-const isPlayed  = g => isValid(g) && g.homeGoals != null && g.awayGoals != null;
+const isValid  = g => g.home.name && g.away.name;
+const isPlayed = g => isValid(g) && g.homeGoals != null && g.awayGoals != null;
+const isFuture = g => isValid(g) && g.homeGoals == null && g.date;
 
 function dedupe(games) {
   const seen = new Set();
@@ -95,7 +100,7 @@ function shapeForm(rows, kgmid, name) {
 async function main() {
   const meta = { generatedAt: new Date().toISOString(), searches: 0, leagueType: null, teamType: null };
 
-  /* ---- LEAGUE: discover working `type` ---- */
+  /* ---- LEAGUE ---- */
   let leagueRaw = null;
   let games = [];
 
@@ -106,54 +111,57 @@ async function main() {
       const g = dedupe(collectGames(leagueRaw).map(normGame).filter(isValid));
       console.log(`league type=${type} → 200 OK, ${g.length} games found`);
       if (g.length) { games = g; meta.leagueType = type; break; }
+      console.warn(`league type=${type} returned 0 games. Payload keys: ${Object.keys(leagueRaw).join(', ')}`);
     } catch (e) {
       if (e instanceof Fatal) throw e;
       console.warn(`league type=${type} → ${e.message}`);
     }
   }
 
-  if (!leagueRaw) throw new Error('League fetch failed for every type candidate. Check kgmid/secret.');
-  if (!games.length) {
-    console.warn('WARNING: league payload contained 0 games. Top-level keys: ' + Object.keys(leagueRaw).join(', '));
-    console.warn('Inspect data/raw-sample.json after this run.');
+  if (!leagueRaw && !TEAMS_KGMIDS.length) {
+    throw new Error('League fetch failed for every type candidate and no TEAMS_KGMIDS fallback set.');
   }
 
   const now = Date.now();
-  const upcoming = games.filter(g => g.date && new Date(g.date).getTime() >= now - 3 * 3600e3);
-  const finished = games.filter(isPlayed);
+  let upcoming = dedupe(games.filter(g => isFuture(g) && new Date(g.date).getTime() >= now - 3 * 3600e3));
+  const finished = dedupe(games.filter(isPlayed));
 
-  /* ---- TEAMS: discover team `type` once, reuse ---- */
+  /* ---- TEAMS ---- */
   const teamIds = new Map();
   for (const g of upcoming) {
     if (g.home.kgmid) teamIds.set(g.home.kgmid, g.home.name);
     if (g.away.kgmid) teamIds.set(g.away.kgmid, g.away.name);
   }
+  for (const [kgmid, name] of TEAMS_KGMIDS) if (!teamIds.has(kgmid)) teamIds.set(kgmid, name);
 
   const form = {};
+  const unplayedFromTeams = [];
   let teamType = TYPE_TEAM || null;
   let teamsDone = 0;
 
   for (const [kgmid, name] of [...teamIds.entries()].slice(0, MAX_TEAMS)) {
+    const handleRaw = (raw) => {
+      const all = collectGames(raw).map(normGame);
+      const played = all.filter(isPlayed);
+      unplayedFromTeams.push(...all.filter(isFuture));
+      if (played.length) { form[name] = shapeForm(played, kgmid, name); teamsDone++; }
+      return played.length;
+    };
+
     try {
       if (!teamType) {
         for (const t of TEAM_TYPE_CANDIDATES) {
           const raw = await serp({ kgmid, sp: SPORT, type: t });
           meta.searches++;
-          const rows = collectGames(raw).map(normGame).filter(isPlayed);
-          console.log(`team type=${t} → 200 OK, ${rows.length} played games`);
-          if (rows.length) {
-            teamType = t;
-            meta.teamType = t;
-            form[name] = shapeForm(rows, kgmid, name);
-            teamsDone++;
-            break;
-          }
+          const n = handleRaw(raw);
+          console.log(`team type=${t} → 200 OK, ${n} played games`);
+          if (n) { teamType = t; meta.teamType = t; break; }
+          console.warn(`team type=${t} returned 0 played games. Payload keys: ${Object.keys(raw).join(', ')}`);
         }
       } else {
         const raw = await serp({ kgmid, sp: SPORT, type: teamType });
         meta.searches++;
-        const rows = collectGames(raw).map(normGame).filter(isPlayed);
-        if (rows.length) { form[name] = shapeForm(rows, kgmid, name); teamsDone++; }
+        handleRaw(raw);
       }
       await sleep(400);
     } catch (e) {
@@ -162,7 +170,13 @@ async function main() {
     }
   }
 
-  /* ---- ODDS (RapidAPI, optional) ---- */
+  /* Safety net: build fixtures from team pages if league tab gave nothing */
+  if (!upcoming.length && unplayedFromTeams.length) {
+    upcoming = dedupe(unplayedFromTeams).filter(g => new Date(g.date).getTime() >= now - 3 * 3600e3);
+    console.log(`league tab empty → built ${upcoming.length} upcoming fixtures from team pages`);
+  }
+
+  /* ---- ODDS ---- */
   let oddsRows = [];
   if (RAPIDAPI_KEY) {
     try {
@@ -188,10 +202,11 @@ async function main() {
   fs.writeFileSync('data/form.json',     JSON.stringify(form, null, 2));
   fs.writeFileSync('data/odds.json',     JSON.stringify(oddsRows, null, 2));
   fs.writeFileSync('data/meta.json',     JSON.stringify({ ...meta, teamsDone }, null, 2));
-  fs.writeFileSync('data/raw-sample.json', JSON.stringify(collectGames(leagueRaw).slice(0, 2), null, 2));
+  fs.writeFileSync('data/raw-sample.json', JSON.stringify((leagueRaw ? collectGames(leagueRaw) : []).slice(0, 2), null, 2));
 
   console.log(`SUMMARY: leagueType=${meta.leagueType} teamType=${meta.teamType} upcoming=${upcoming.length} forms=${teamsDone} odds=${oddsRows.length} searches=${meta.searches}`);
-  console.log('TIP: pin the discovered types in Settings → Variables → TYPE_LEAGUE / TYPE_TEAM to skip discovery next run.');
+  console.log('TIP: pin discovered types via Settings → Variables → TYPE_LEAGUE / TYPE_TEAM.');
+  console.log('If types were wrong, discover manually: SerpApi dashboard → Your Playground → engine=google_sports, kgmid=..., sp=ft, type=???');
 }
 
 main().catch(e => {
