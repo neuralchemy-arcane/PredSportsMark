@@ -1,15 +1,15 @@
 {
   "search_metadata": {
-    "id": "6ab133ecb9dbc42012ff4f7d",
+    "id": "6ab3a9f23ee4c28a1507212f",
     "status": "Success",
-    "json_endpoint": "https://serpapi.com/searches/j3j6TWons7ApY_oLJZ0Vnij_uNcjWFWxDZ1AsfuhvGk/6ab133ecb9dbc42012ff4f7d.json",
-    "markdown_endpoint": "https://serpapi.com/searches/j3j6TWons7ApY_oLJZ0Vnij_uNcjWFWxDZ1AsfuhvGk/6ab133ecb9dbc42012ff4f7d.md",
-    "created_at": "2026-09-21 13:41:00 UTC",
-    "processed_at": "2026-09-21 13:41:00 UTC",
+    "json_endpoint": "https://serpapi.com/searches/cTO52O04c_J4e7kONYgTY_8PEzKl03X1B8Vn-F_jGHA/6ab3a9f23ee4c28a1507212f.json",
+    "markdown_endpoint": "https://serpapi.com/searches/cTO52O04c_J4e7kONYgTY_8PEzKl03X1B8Vn-F_jGHA/6ab3a9f23ee4c28a1507212f.md",
+    "created_at": "2026-09-23 10:29:06 UTC",
+    "processed_at": "2026-09-23 10:29:06 UTC",
     "google_sports_url": "https://www.google.com/search?kgmid=/m/02_tc&sourceid=chrome&ie=UTF-8&hl=en#sie=m;/m/02_tc;2;/m/02_tc;dt;fp;1;;;;-1",
-    "raw_html_file": "https://serpapi.com/searches/j3j6TWons7ApY_oLJZ0Vnij_uNcjWFWxDZ1AsfuhvGk/6ab133ecb9dbc42012ff4f7d.html",
-    "prettify_html_file": "https://serpapi.com/searches/j3j6TWons7ApY_oLJZ0Vnij_uNcjWFWxDZ1AsfuhvGk/6ab133ecb9dbc42012ff4f7d.prettify",
-    "total_time_taken": 1.84
+    "raw_html_file": "https://serpapi.com/searches/cTO52O04c_J4e7kONYgTY_8PEzKl03X1B8Vn-F_jGHA/6ab3a9f23ee4c28a1507212f.html",
+    "prettify_html_file": "https://serpapi.com/searches/cTO52O04c_J4e7kONYgTY_8PEzKl03X1B8Vn-F_jGHA/6ab3a9f23ee4c28a1507212f.prettify",
+    "total_time_taken": 2.04
   },
   "search_parameters": {
     "engine": "google_sports",
