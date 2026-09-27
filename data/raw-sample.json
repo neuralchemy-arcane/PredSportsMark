@@ -1,1 +1,112 @@
-[]
+[
+  {
+    "teams": [
+      {
+        "name": "Everton F.C.",
+        "short_name": "Everton",
+        "short_code": "EVE",
+        "kgmid": "/m/0mmd6",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/C3J47ea36cMBc4XPbp9aaA_500x500.png",
+        "score": 2,
+        "score_original": "2"
+      },
+      {
+        "name": "Manchester United F.C.",
+        "short_name": "Man Utd",
+        "short_code": "MUN",
+        "kgmid": "/m/050fh",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/udQ6ns69PctCv143h-GeYw_500x500.png",
+        "score": 2,
+        "score_original": "2"
+      }
+    ],
+    "league": {
+      "name": "Premier League",
+      "short_code": "EPL",
+      "kgmid": "/m/02_tc"
+    },
+    "venue": {
+      "name": "Hill Dickinson Stadium",
+      "location": "Liverpool",
+      "kgmid": "/g/11c6_twtlz"
+    },
+    "status": "finished",
+    "status_original": "FT",
+    "kgmid": "/g/11nqddyy10",
+    "serpapi_link": "https://serpapi.com/search.json?engine=google_sports&hl=en&kgmid=%2Fg%2F11nqddyy10&sp=ft&type=game",
+    "start_time": "2026-09-06T13:00:00Z",
+    "end_time": "2026-09-06T14:56:46Z",
+    "highlights": [
+      {
+        "title": "Match recap",
+        "source_title": "Everton v. Manchester United | PREMIER LEAGUE HIGHLIGHTS | 9/6/2026 | NBC Sports",
+        "link": "https://www.youtube.com/watch?v=cPklX9Z9PWg&feature=onebox",
+        "duration": "15:31",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/videos/vita/B69CDEBxVBxa9A73_768x432.jpg",
+        "posted_at": "2026-09-06T16:31:41Z"
+      },
+      {
+        "title": "Match recap",
+        "link": "https://nbcsports.com/stories/games/6a9d805f4d7cc34f9f06a9a8.html",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/videos/vita/_wg_VTO1NDseO6N2_768x432.jpg",
+        "posted_at": "2026-09-06T15:02:10Z"
+      }
+    ]
+  },
+  {
+    "teams": [
+      {
+        "name": "Arsenal F.C.",
+        "short_name": "Arsenal",
+        "short_code": "ARS",
+        "kgmid": "/m/0xbm",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/4us2nCgl6kgZc0t3hpW75Q_500x500.png",
+        "score": 2,
+        "score_original": "2",
+        "win": true
+      },
+      {
+        "name": "Chelsea F.C.",
+        "short_name": "Chelsea",
+        "short_code": "CHE",
+        "kgmid": "/m/023fb",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/fhBITrIlbQxhVB6IjxUO6Q_500x500.png",
+        "score": 1,
+        "score_original": "1"
+      }
+    ],
+    "league": {
+      "name": "Premier League",
+      "short_code": "EPL",
+      "kgmid": "/m/02_tc"
+    },
+    "venue": {
+      "name": "Arsenal - Emirates Stadium",
+      "alt_name": "Emirates Stadium",
+      "location": "London",
+      "kgmid": "/m/035zmm"
+    },
+    "status": "finished",
+    "status_original": "FT",
+    "kgmid": "/g/11nqddrh6w",
+    "serpapi_link": "https://serpapi.com/search.json?engine=google_sports&hl=en&kgmid=%2Fg%2F11nqddrh6w&sp=ft&type=game",
+    "start_time": "2026-09-06T15:30:00Z",
+    "end_time": "2026-09-06T17:27:12Z",
+    "highlights": [
+      {
+        "title": "Match recap",
+        "source_title": "Arsenal v. Chelsea | PREMIER LEAGUE HIGHLIGHTS | 9/6/2026 | NBC Sports",
+        "link": "https://www.youtube.com/watch?v=9UhwBF261BU&feature=onebox",
+        "duration": "14:35",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/videos/vita/wHOot3C_NxBc-MKQ_768x432.jpg",
+        "posted_at": "2026-09-06T18:17:15Z"
+      },
+      {
+        "title": "Match recap",
+        "link": "https://nbcsports.com/stories/games/6a9da3a4295d3bc0958665cd.html",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/videos/vita/eukwKVk_GP-w2bad_768x432.jpg",
+        "posted_at": "2026-09-06T17:33:16Z"
+      }
+    ]
+  }
+]
