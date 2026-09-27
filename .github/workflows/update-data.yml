@@ -2,30 +2,37 @@ name: update-data
 
 on:
   schedule:
-    - cron: '0 6 */2 * *'   # every 2 days at 06:00 UTC
-  workflow_dispatch: {}      # manual "Run workflow" button
+    - cron: '0 6 */2 * *'
+  workflow_dispatch: {}
 
 permissions:
   contents: write
 
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '24'
 
-      - name: Fetch SerpApi + odds data
+      - name: Fetch fixtures, form, and odds
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
           RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
           LEAGUE_KGMID: ${{ vars.LEAGUE_KGMID }}
           MAX_TEAMS: ${{ vars.MAX_TEAMS }}
-          TYPE_LEAGUE: ${{ vars.TYPE_LEAGUE }}
-          TYPE_TEAM: ${{ vars.TYPE_TEAM }}
+          API_FOOTBALL_LEAGUES: ${{ vars.API_FOOTBALL_LEAGUES }}
+          DAYS_AHEAD: ${{ vars.DAYS_AHEAD }}
         run: node tools/fetch-data.mjs
 
       - name: Commit data
