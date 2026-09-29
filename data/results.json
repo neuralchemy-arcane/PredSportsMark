@@ -358,41 +358,5 @@
     },
     "homeGoals": 2,
     "awayGoals": 2
-  },
-  {
-    "date": "2026-09-06T15:30:00Z",
-    "status": "finished",
-    "league": "Premier League",
-    "venue": "Arsenal - Emirates Stadium",
-    "home": {
-      "name": "Arsenal F.C.",
-      "kgmid": "/m/0xbm",
-      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/4us2nCgl6kgZc0t3hpW75Q_500x500.png"
-    },
-    "away": {
-      "name": "Chelsea F.C.",
-      "kgmid": "/m/023fb",
-      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/fhBITrIlbQxhVB6IjxUO6Q_500x500.png"
-    },
-    "homeGoals": 2,
-    "awayGoals": 1
-  },
-  {
-    "date": "2026-09-06T13:00:00Z",
-    "status": "finished",
-    "league": "Premier League",
-    "venue": "Hill Dickinson Stadium",
-    "home": {
-      "name": "Everton F.C.",
-      "kgmid": "/m/0mmd6",
-      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/C3J47ea36cMBc4XPbp9aaA_500x500.png"
-    },
-    "away": {
-      "name": "Manchester United F.C.",
-      "kgmid": "/m/050fh",
-      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/udQ6ns69PctCv143h-GeYw_500x500.png"
-    },
-    "homeGoals": 2,
-    "awayGoals": 2
   }
 ]

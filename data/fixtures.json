@@ -322,5 +322,41 @@
     },
     "homeGoals": null,
     "awayGoals": null
+  },
+  {
+    "date": "2026-10-18T15:30:00Z",
+    "status": "upcoming",
+    "league": "Premier League",
+    "venue": "City Ground",
+    "home": {
+      "name": "Nottingham Forest F.C.",
+      "kgmid": "/m/014nzp",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/Zr6FbE-8pDH7UBpWCO8U9A_500x500.png"
+    },
+    "away": {
+      "name": "Arsenal F.C.",
+      "kgmid": "/m/0xbm",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/4us2nCgl6kgZc0t3hpW75Q_500x500.png"
+    },
+    "homeGoals": null,
+    "awayGoals": null
+  },
+  {
+    "date": "2026-10-19T19:00:00Z",
+    "status": "upcoming",
+    "league": "Premier League",
+    "venue": "Tottenham Hotspur Stadium",
+    "home": {
+      "name": "Tottenham Hotspur F.C.",
+      "kgmid": "/m/0hvjr",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/k3Q_mKE98Dnohrcea0JFgQ_500x500.png"
+    },
+    "away": {
+      "name": "Coventry City Football Club",
+      "kgmid": "/m/0284gc",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/KHpmY4tIwqiutl8Cfl0MAw_500x500.png"
+    },
+    "homeGoals": null,
+    "awayGoals": null
   }
 ]
