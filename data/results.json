@@ -340,23 +340,5 @@
     },
     "homeGoals": 1,
     "awayGoals": 2
-  },
-  {
-    "date": "2026-09-12T14:00:00Z",
-    "status": "finished",
-    "league": "Premier League",
-    "venue": "Stamford Bridge",
-    "home": {
-      "name": "Chelsea F.C.",
-      "kgmid": "/m/023fb",
-      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/fhBITrIlbQxhVB6IjxUO6Q_500x500.png"
-    },
-    "away": {
-      "name": "Hull City A.F.C.",
-      "kgmid": "/m/02b2np",
-      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/riiyZbb1JHuFQgZ3831jUQ_500x500.png"
-    },
-    "homeGoals": 2,
-    "awayGoals": 2
   }
 ]

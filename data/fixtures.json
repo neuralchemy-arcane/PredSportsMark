@@ -358,5 +358,23 @@
     },
     "homeGoals": null,
     "awayGoals": null
+  },
+  {
+    "date": "2026-10-23T19:00:00Z",
+    "status": "upcoming",
+    "league": "Premier League",
+    "venue": "Portman Road Stadium",
+    "home": {
+      "name": "Ipswich Town F.C.",
+      "kgmid": "/m/01zhs3",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/56vquJBk5U16Dng7txLXCw_500x500.png"
+    },
+    "away": {
+      "name": "Nottingham Forest F.C.",
+      "kgmid": "/m/014nzp",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/Zr6FbE-8pDH7UBpWCO8U9A_500x500.png"
+    },
+    "homeGoals": null,
+    "awayGoals": null
   }
 ]

@@ -165,14 +165,6 @@
   ],
   "Aston Villa F.C.": [
     {
-      "date": "2026-08-07T12:00:00Z",
-      "home": "Aston Villa F.C.",
-      "away": "FC Bayern Munich",
-      "homeGoals": 1,
-      "awayGoals": 2,
-      "teamIsHome": true
-    },
-    {
       "date": "2026-08-12T19:00:00Z",
       "home": "Paris Saint-Germain F.C.",
       "away": "Aston Villa F.C.",
@@ -241,6 +233,14 @@
       "home": "Tottenham Hotspur F.C.",
       "away": "Aston Villa F.C.",
       "homeGoals": 2,
+      "awayGoals": 3,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-10-02T18:30:00Z",
+      "home": "Sevilla FC",
+      "away": "Aston Villa F.C.",
+      "homeGoals": 1,
       "awayGoals": 3,
       "teamIsHome": false
     }
