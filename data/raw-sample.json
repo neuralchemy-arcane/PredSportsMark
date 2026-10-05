@@ -2,20 +2,21 @@
   {
     "teams": [
       {
-        "name": "Liverpool F.C.",
-        "short_name": "Liverpool",
-        "short_code": "LIV",
-        "kgmid": "/m/04ltf",
-        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/nGfV05dipbAc7zzojivKew_500x500.png",
-        "score": 0,
-        "score_original": "0"
+        "name": "Brentford F.C.",
+        "short_name": "Brentford",
+        "short_code": "BRE",
+        "kgmid": "/m/02b0y3",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/QOUce0WQBYqnkSmN6_TxGA_500x500.png",
+        "score": 3,
+        "score_original": "3",
+        "win": true
       },
       {
-        "name": "Fulham F.C.",
-        "short_name": "Fulham",
-        "short_code": "FUL",
-        "kgmid": "/m/02_lt",
-        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/Gh7_5p3n364p4vxeM8FhNg_500x500.png",
+        "name": "Chelsea F.C.",
+        "short_name": "Chelsea",
+        "short_code": "CHE",
+        "kgmid": "/m/023fb",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/fhBITrIlbQxhVB6IjxUO6Q_500x500.png",
         "score": 0,
         "score_original": "0"
       }
@@ -26,51 +27,44 @@
       "kgmid": "/m/02_tc"
     },
     "venue": {
-      "name": "Anfield",
-      "location": "Liverpool",
-      "kgmid": "/m/0187zr"
+      "name": "Gtech Community Stadium",
+      "location": "Brentford",
+      "kgmid": "/m/043sj5f"
     },
     "status": "finished",
     "status_original": "FT",
-    "kgmid": "/g/11z9473381",
-    "serpapi_link": "https://serpapi.com/search.json?engine=google_sports&hl=en&kgmid=%2Fg%2F11z9473381&sp=ft&type=game",
-    "start_time": "2026-09-12T14:00:00Z",
-    "end_time": "2026-09-12T15:50:57Z",
+    "kgmid": "/g/11nqdf4cpj",
+    "serpapi_link": "https://serpapi.com/search.json?engine=google_sports&hl=en&kgmid=%2Fg%2F11nqdf4cpj&sp=ft&type=game",
+    "start_time": "2026-09-18T19:00:00Z",
+    "end_time": "2026-09-18T20:53:53Z",
     "highlights": [
       {
         "title": "Match recap",
-        "source_title": "Liverpool v. Fulham | PREMIER LEAGUE HIGHLIGHTS | 9/12/2026 | NBC Sports",
-        "link": "https://www.youtube.com/watch?v=lhlRY_fCebQ&feature=onebox",
-        "duration": "9:40",
-        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/videos/vita/3pzSIx9h0XyW3KPq_768x432.jpg",
-        "posted_at": "2026-09-12T20:04:28Z"
-      },
-      {
-        "title": "Match recap",
-        "link": "https://nbcsports.com/stories/games/6aa55bd4c1330bd3c4722427.html",
-        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/videos/vita/9IM5fhx7jIVQczYT_768x432.jpg",
-        "posted_at": "2026-09-12T14:04:16Z"
+        "source_title": "Brentford v. Chelsea | PREMIER LEAGUE HIGHLIGHTS | 9/18/2026 | NBC Sports",
+        "link": "https://www.youtube.com/watch?v=DGRzyNh7mFQ&feature=onebox",
+        "duration": "11:10",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/videos/vita/9GR6qIAea1a29W1E_768x432.jpg",
+        "posted_at": "2026-09-19T12:28:26Z"
       }
     ]
   },
   {
     "teams": [
       {
-        "name": "Crystal Palace F.C.",
-        "short_name": "Palace",
-        "short_code": "CRY",
-        "kgmid": "/m/0223bl",
-        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/8piQOzndGmApKYTcvyN9vA_500x500.png",
+        "name": "Tottenham Hotspur F.C.",
+        "short_name": "Spurs",
+        "short_code": "TOT",
+        "kgmid": "/m/0hvjr",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/k3Q_mKE98Dnohrcea0JFgQ_500x500.png",
         "score": 2,
-        "score_original": "2",
-        "red_card": true
+        "score_original": "2"
       },
       {
-        "name": "Ipswich Town F.C.",
-        "short_name": "Ipswich Town",
-        "short_code": "IPS",
-        "kgmid": "/m/01zhs3",
-        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/56vquJBk5U16Dng7txLXCw_500x500.png",
+        "name": "Aston Villa F.C.",
+        "short_name": "Aston Villa",
+        "short_code": "AVL",
+        "kgmid": "/m/0bl8l",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/uyNNelfnFvCEnsLrUL-j2Q_500x500.png",
         "score": 3,
         "score_original": "3",
         "win": true
@@ -82,31 +76,30 @@
       "kgmid": "/m/02_tc"
     },
     "venue": {
-      "name": "Selhurst Park Stadium",
-      "alt_name": "Selhurst Park",
+      "name": "Tottenham Hotspur Stadium",
       "location": "London",
-      "kgmid": "/m/0328hf"
+      "kgmid": "/g/11bc58b617"
     },
     "status": "finished",
     "status_original": "FT",
-    "kgmid": "/g/11z9485226",
-    "serpapi_link": "https://serpapi.com/search.json?engine=google_sports&hl=en&kgmid=%2Fg%2F11z9485226&sp=ft&type=game",
-    "start_time": "2026-09-12T14:00:00Z",
-    "end_time": "2026-09-24T06:55:21Z",
+    "kgmid": "/g/11nqddkvlm",
+    "serpapi_link": "https://serpapi.com/search.json?engine=google_sports&hl=en&kgmid=%2Fg%2F11nqddkvlm&sp=ft&type=game",
+    "start_time": "2026-09-19T11:30:00Z",
+    "end_time": "2026-09-19T13:32:24Z",
     "highlights": [
       {
         "title": "Match recap",
-        "source_title": "Crystal Palace v. Ipswich Town | PREMIER LEAGUE HIGHLIGHTS | 9/12/2026 | NBC Sports",
-        "link": "https://www.youtube.com/watch?v=PZYCxiepQ_o&feature=onebox",
-        "duration": "9:57",
-        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/videos/vita/J7rVUt0OncunbHKR_768x432.jpg",
-        "posted_at": "2026-09-12T20:03:33Z"
+        "source_title": "Tottenham Hotspur v. Aston Villa | PREMIER LEAGUE HIGHLIGHTS | 9/19/2026 | NBC Sports",
+        "link": "https://www.youtube.com/watch?v=Yo2o43dM_VM&feature=onebox",
+        "duration": "15:23",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/videos/vita/JKkMRRgu7iVxbTkH_768x432.jpg",
+        "posted_at": "2026-09-19T14:51:17Z"
       },
       {
         "title": "Match recap",
-        "link": "https://nbcsports.com/stories/games/6aa55c082f1b32ac97560bd2.html",
-        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/videos/vita/Anv3enUdmDYtL8vt_768x432.jpg",
-        "posted_at": "2026-09-12T14:05:14Z"
+        "link": "https://nbcsports.com/stories/games/6aae90147960401d7e2a6c94.html",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/videos/vita/9DnTVpuT_86szns0_768x432.jpg",
+        "posted_at": "2026-09-19T13:37:48Z"
       }
     ]
   }
