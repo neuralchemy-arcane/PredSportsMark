@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-07T12:19:39.801Z",
-  "searches": 1,
+  "generatedAt": "2026-10-09T12:18:01.215Z",
+  "searches": 11,
   "leagueKgmId": "/m/02_tc",
   "sources": {
-    "serpLeague": false,
-    "serpTeams": 0,
+    "serpLeague": true,
+    "serpTeams": 10,
     "odds": false,
     "apiFootball": false
   }

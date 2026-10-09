@@ -1,1 +1,182 @@
-[]
+[
+  {
+    "date": "2026-09-20T15:30:00Z",
+    "status": "finished",
+    "league": "Premier League",
+    "venue": "Craven Cottage",
+    "home": {
+      "name": "Fulham F.C.",
+      "kgmid": "/m/02_lt",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/Gh7_5p3n364p4vxeM8FhNg_500x500.png"
+    },
+    "away": {
+      "name": "Manchester United F.C.",
+      "kgmid": "/m/050fh",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/udQ6ns69PctCv143h-GeYw_500x500.png"
+    },
+    "homeGoals": 1,
+    "awayGoals": 1
+  },
+  {
+    "date": "2026-09-20T13:00:00Z",
+    "status": "finished",
+    "league": "Premier League",
+    "venue": "Vitality Stadium",
+    "home": {
+      "name": "AFC Bournemouth",
+      "kgmid": "/m/02b0xq",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/IcOt-hrK04B-RlRwI3R0yA_500x500.png"
+    },
+    "away": {
+      "name": "Liverpool F.C.",
+      "kgmid": "/m/04ltf",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/nGfV05dipbAc7zzojivKew_500x500.png"
+    },
+    "homeGoals": 0,
+    "awayGoals": 1
+  },
+  {
+    "date": "2026-09-20T13:00:00Z",
+    "status": "finished",
+    "league": "Premier League",
+    "venue": "Etihad Stadium",
+    "home": {
+      "name": "Manchester City F.C.",
+      "kgmid": "/m/01634x",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/z44l-a0W1v5FmgPnemV6Xw_500x500.png"
+    },
+    "away": {
+      "name": "Sunderland A.F.C.",
+      "kgmid": "/m/0196bp",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/CQFeTfHrtxqgr3VKWtTwfA_500x500.png"
+    },
+    "homeGoals": 5,
+    "awayGoals": 3
+  },
+  {
+    "date": "2026-09-20T13:00:00Z",
+    "status": "finished",
+    "league": "Premier League",
+    "venue": "Elland Road",
+    "home": {
+      "name": "Leeds United F.C.",
+      "kgmid": "/m/01xn7x1",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/5dqfOKpjjW6EwTAx_FysKQ_500x500.png"
+    },
+    "away": {
+      "name": "Crystal Palace F.C.",
+      "kgmid": "/m/0223bl",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/8piQOzndGmApKYTcvyN9vA_500x500.png"
+    },
+    "homeGoals": 0,
+    "awayGoals": 0
+  },
+  {
+    "date": "2026-09-19T16:30:00Z",
+    "status": "finished",
+    "league": "Premier League",
+    "venue": "City Ground",
+    "home": {
+      "name": "Nottingham Forest F.C.",
+      "kgmid": "/m/014nzp",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/Zr6FbE-8pDH7UBpWCO8U9A_500x500.png"
+    },
+    "away": {
+      "name": "Coventry City Football Club",
+      "kgmid": "/m/0284gc",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/KHpmY4tIwqiutl8Cfl0MAw_500x500.png"
+    },
+    "homeGoals": 0,
+    "awayGoals": 1
+  },
+  {
+    "date": "2026-09-19T14:00:00Z",
+    "status": "finished",
+    "league": "Premier League",
+    "venue": "Hill Dickinson Stadium",
+    "home": {
+      "name": "Everton F.C.",
+      "kgmid": "/m/0mmd6",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/C3J47ea36cMBc4XPbp9aaA_500x500.png"
+    },
+    "away": {
+      "name": "Ipswich Town F.C.",
+      "kgmid": "/m/01zhs3",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/56vquJBk5U16Dng7txLXCw_500x500.png"
+    },
+    "homeGoals": 1,
+    "awayGoals": 0
+  },
+  {
+    "date": "2026-09-19T14:00:00Z",
+    "status": "finished",
+    "league": "Premier League",
+    "venue": "American Express Stadium",
+    "home": {
+      "name": "Brighton & Hove Albion F.C.",
+      "kgmid": "/m/0j2pg",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/EKIe0e-ZIphOcfQAwsuEEQ_500x500.png"
+    },
+    "away": {
+      "name": "Arsenal F.C.",
+      "kgmid": "/m/0xbm",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/4us2nCgl6kgZc0t3hpW75Q_500x500.png"
+    },
+    "homeGoals": 3,
+    "awayGoals": 0
+  },
+  {
+    "date": "2026-09-19T14:00:00Z",
+    "status": "finished",
+    "league": "Premier League",
+    "venue": "St. James Park",
+    "home": {
+      "name": "Newcastle United F.C.",
+      "kgmid": "/m/0fvly",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/96CcNNQ0AYDAbssP0V9LuQ_500x500.png"
+    },
+    "away": {
+      "name": "Hull City A.F.C.",
+      "kgmid": "/m/02b2np",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/riiyZbb1JHuFQgZ3831jUQ_500x500.png"
+    },
+    "homeGoals": 2,
+    "awayGoals": 1
+  },
+  {
+    "date": "2026-09-19T11:30:00Z",
+    "status": "finished",
+    "league": "Premier League",
+    "venue": "Tottenham Hotspur Stadium",
+    "home": {
+      "name": "Tottenham Hotspur F.C.",
+      "kgmid": "/m/0hvjr",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/k3Q_mKE98Dnohrcea0JFgQ_500x500.png"
+    },
+    "away": {
+      "name": "Aston Villa F.C.",
+      "kgmid": "/m/0bl8l",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/uyNNelfnFvCEnsLrUL-j2Q_500x500.png"
+    },
+    "homeGoals": 2,
+    "awayGoals": 3
+  },
+  {
+    "date": "2026-09-18T19:00:00Z",
+    "status": "finished",
+    "league": "Premier League",
+    "venue": "Gtech Community Stadium",
+    "home": {
+      "name": "Brentford F.C.",
+      "kgmid": "/m/02b0y3",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/QOUce0WQBYqnkSmN6_TxGA_500x500.png"
+    },
+    "away": {
+      "name": "Chelsea F.C.",
+      "kgmid": "/m/023fb",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/fhBITrIlbQxhVB6IjxUO6Q_500x500.png"
+    },
+    "homeGoals": 3,
+    "awayGoals": 0
+  }
+]
