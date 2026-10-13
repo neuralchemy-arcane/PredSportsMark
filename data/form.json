@@ -1,259 +1,5 @@
 {
-  "Crystal Palace F.C.": [
-    {
-      "date": "2026-08-07T17:00:00Z",
-      "home": "Fulham F.C.",
-      "away": "Crystal Palace F.C.",
-      "homeGoals": 1,
-      "awayGoals": 2,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-08-15T12:00:00Z",
-      "home": "SC Freiburg",
-      "away": "Crystal Palace F.C.",
-      "homeGoals": 3,
-      "awayGoals": 0,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-08-22T14:00:00Z",
-      "home": "Everton F.C.",
-      "away": "Crystal Palace F.C.",
-      "homeGoals": 2,
-      "awayGoals": 0,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-08-28T19:00:00Z",
-      "home": "Crystal Palace F.C.",
-      "away": "Manchester City F.C.",
-      "homeGoals": 1,
-      "awayGoals": 4,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-09-05T14:00:00Z",
-      "home": "Fulham F.C.",
-      "away": "Crystal Palace F.C.",
-      "homeGoals": 2,
-      "awayGoals": 3,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-09-08T18:45:00Z",
-      "home": "Crystal Palace F.C.",
-      "away": "Middlesbrough F.C.",
-      "homeGoals": 3,
-      "awayGoals": 0,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-09-12T14:00:00Z",
-      "home": "Crystal Palace F.C.",
-      "away": "Ipswich Town F.C.",
-      "homeGoals": 2,
-      "awayGoals": 3,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-09-17T19:00:00Z",
-      "home": "Crystal Palace F.C.",
-      "away": "Lech Poznań",
-      "homeGoals": 4,
-      "awayGoals": 0,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-09-20T13:00:00Z",
-      "home": "Leeds United F.C.",
-      "away": "Crystal Palace F.C.",
-      "homeGoals": 0,
-      "awayGoals": 0,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-10-03T11:30:00Z",
-      "home": "Crystal Palace F.C.",
-      "away": "Bristol City F.C.",
-      "homeGoals": 0,
-      "awayGoals": 2,
-      "teamIsHome": true
-    }
-  ],
-  "Nottingham Forest F.C.": [
-    {
-      "date": "2026-08-08T18:00:00Z",
-      "home": "Udinese Calcio",
-      "away": "Nottingham Forest F.C.",
-      "homeGoals": 1,
-      "awayGoals": 0,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-08-08T19:00:00Z",
-      "home": "FC Barcelona",
-      "away": "Nottingham Forest F.C.",
-      "homeGoals": 1,
-      "awayGoals": 0,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-08-12T18:45:00Z",
-      "home": "Nottingham Forest F.C.",
-      "away": "Bayer 04 Leverkusen",
-      "homeGoals": 2,
-      "awayGoals": 1,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-08-16T13:00:00Z",
-      "home": "Nottingham Forest F.C.",
-      "away": "Stade Brestois 29",
-      "homeGoals": 2,
-      "awayGoals": 0,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-08-22T14:00:00Z",
-      "home": "Nottingham Forest F.C.",
-      "away": "Leeds United F.C.",
-      "homeGoals": 0,
-      "awayGoals": 1,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-08-25T19:00:00Z",
-      "home": "Nottingham Forest F.C.",
-      "away": "Leeds United F.C.",
-      "homeGoals": 0,
-      "awayGoals": 2,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-08-29T11:30:00Z",
-      "home": "Liverpool F.C.",
-      "away": "Nottingham Forest F.C.",
-      "homeGoals": 2,
-      "awayGoals": 2,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-09-05T14:00:00Z",
-      "home": "Nottingham Forest F.C.",
-      "away": "Tottenham Hotspur F.C.",
-      "homeGoals": 0,
-      "awayGoals": 0,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-09-12T14:00:00Z",
-      "home": "Aston Villa F.C.",
-      "away": "Nottingham Forest F.C.",
-      "homeGoals": 1,
-      "awayGoals": 2,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-09-19T16:30:00Z",
-      "home": "Nottingham Forest F.C.",
-      "away": "Coventry City Football Club",
-      "homeGoals": 0,
-      "awayGoals": 1,
-      "teamIsHome": true
-    }
-  ],
-  "Hull City A.F.C.": [
-    {
-      "date": "2026-08-01T16:00:00Z",
-      "home": "Kasımpaşa S.K.",
-      "away": "Hull City A.F.C.",
-      "homeGoals": 1,
-      "awayGoals": 1,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-08-08T13:00:00Z",
-      "home": "Eintracht Frankfurt",
-      "away": "Hull City A.F.C.",
-      "homeGoals": 2,
-      "awayGoals": 0,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-08-15T14:00:00Z",
-      "home": "Hull City A.F.C.",
-      "away": "OGC Nice",
-      "homeGoals": 0,
-      "awayGoals": 0,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-08-22T11:30:00Z",
-      "home": "Hull City A.F.C.",
-      "away": "Manchester United F.C.",
-      "homeGoals": 2,
-      "awayGoals": 0,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-08-25T18:45:00Z",
-      "home": "Stoke City F.C.",
-      "away": "Hull City A.F.C.",
-      "homeGoals": 1,
-      "awayGoals": 1,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-08-29T14:00:00Z",
-      "home": "Coventry City Football Club",
-      "away": "Hull City A.F.C.",
-      "homeGoals": 0,
-      "awayGoals": 1,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-09-05T16:30:00Z",
-      "home": "Hull City A.F.C.",
-      "away": "Aston Villa F.C.",
-      "homeGoals": 0,
-      "awayGoals": 0,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-09-08T18:45:00Z",
-      "home": "Sunderland A.F.C.",
-      "away": "Hull City A.F.C.",
-      "homeGoals": 1,
-      "awayGoals": 0,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-09-12T14:00:00Z",
-      "home": "Chelsea F.C.",
-      "away": "Hull City A.F.C.",
-      "homeGoals": 2,
-      "awayGoals": 2,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-09-19T14:00:00Z",
-      "home": "Newcastle United F.C.",
-      "away": "Hull City A.F.C.",
-      "homeGoals": 2,
-      "awayGoals": 1,
-      "teamIsHome": false
-    }
-  ],
   "Everton F.C.": [
-    {
-      "date": "2026-08-08T15:00:00Z",
-      "home": "VfB Stuttgart",
-      "away": "Everton F.C.",
-      "homeGoals": 3,
-      "awayGoals": 1,
-      "teamIsHome": false
-    },
     {
       "date": "2026-08-12T16:15:00Z",
       "home": "Everton F.C.",
@@ -325,334 +71,14 @@
       "homeGoals": 1,
       "awayGoals": 0,
       "teamIsHome": true
-    }
-  ],
-  "Liverpool F.C.": [
-    {
-      "date": "2026-08-02T20:00:00Z",
-      "home": "Liverpool F.C.",
-      "away": "Leeds United F.C.",
-      "homeGoals": 2,
-      "awayGoals": 4,
-      "teamIsHome": true
     },
     {
-      "date": "2026-08-09T13:30:00Z",
-      "home": "Liverpool F.C.",
-      "away": "AS Monaco",
-      "homeGoals": 2,
-      "awayGoals": 3,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-08-16T17:00:00Z",
-      "home": "Liverpool F.C.",
-      "away": "Como 1907",
-      "homeGoals": 2,
-      "awayGoals": 0,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-08-23T15:30:00Z",
-      "home": "Newcastle United F.C.",
-      "away": "Liverpool F.C.",
+      "date": "2026-10-11T13:00:00Z",
+      "home": "Hull City A.F.C.",
+      "away": "Everton F.C.",
       "homeGoals": 2,
       "awayGoals": 2,
       "teamIsHome": false
-    },
-    {
-      "date": "2026-08-29T11:30:00Z",
-      "home": "Liverpool F.C.",
-      "away": "Nottingham Forest F.C.",
-      "homeGoals": 2,
-      "awayGoals": 2,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-09-04T19:00:00Z",
-      "home": "Ipswich Town F.C.",
-      "away": "Liverpool F.C.",
-      "homeGoals": 0,
-      "awayGoals": 2,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-09-09T19:00:00Z",
-      "home": "Liverpool F.C.",
-      "away": "Atlético Madrid",
-      "homeGoals": 2,
-      "awayGoals": 1,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-09-12T14:00:00Z",
-      "home": "Liverpool F.C.",
-      "away": "Fulham F.C.",
-      "homeGoals": 0,
-      "awayGoals": 0,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-09-15T19:00:00Z",
-      "home": "Liverpool F.C.",
-      "away": "Tottenham Hotspur F.C.",
-      "homeGoals": 3,
-      "awayGoals": 1,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-09-20T13:00:00Z",
-      "home": "AFC Bournemouth",
-      "away": "Liverpool F.C.",
-      "homeGoals": 0,
-      "awayGoals": 1,
-      "teamIsHome": false
-    }
-  ],
-  "Manchester City F.C.": [
-    {
-      "date": "2026-08-05T11:00:00Z",
-      "home": "Team K League",
-      "away": "Manchester City F.C.",
-      "homeGoals": 1,
-      "awayGoals": 3,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-08-09T11:00:00Z",
-      "home": "Manchester City F.C.",
-      "away": "Atlético Madrid",
-      "homeGoals": 3,
-      "awayGoals": 1,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-08-16T14:00:00Z",
-      "home": "Arsenal F.C.",
-      "away": "Manchester City F.C.",
-      "homeGoals": 3,
-      "awayGoals": 0,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-08-23T13:00:00Z",
-      "home": "Manchester City F.C.",
-      "away": "AFC Bournemouth",
-      "homeGoals": 2,
-      "awayGoals": 1,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-08-28T19:00:00Z",
-      "home": "Crystal Palace F.C.",
-      "away": "Manchester City F.C.",
-      "homeGoals": 1,
-      "awayGoals": 4,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-09-05T14:00:00Z",
-      "home": "Manchester City F.C.",
-      "away": "Coventry City Football Club",
-      "homeGoals": 1,
-      "awayGoals": 0,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-09-08T19:00:00Z",
-      "home": "FC Porto",
-      "away": "Manchester City F.C.",
-      "homeGoals": 0,
-      "awayGoals": 2,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-09-13T15:30:00Z",
-      "home": "Manchester United F.C.",
-      "away": "Manchester City F.C.",
-      "homeGoals": 0,
-      "awayGoals": 1,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-09-17T18:30:00Z",
-      "home": "Manchester City F.C.",
-      "away": "Norwich City F.C.",
-      "homeGoals": 5,
-      "awayGoals": 0,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-09-20T13:00:00Z",
-      "home": "Manchester City F.C.",
-      "away": "Sunderland A.F.C.",
-      "homeGoals": 5,
-      "awayGoals": 3,
-      "teamIsHome": true
-    }
-  ],
-  "Coventry City Football Club": [
-    {
-      "date": "2026-07-18T13:00:00Z",
-      "home": "Northampton Town F.C.",
-      "away": "Coventry City Football Club",
-      "homeGoals": 0,
-      "awayGoals": 0,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-08-08T16:30:00Z",
-      "home": "Coventry City Football Club",
-      "away": "RCD Espanyol de Barcelona",
-      "homeGoals": 3,
-      "awayGoals": 1,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-08-14T18:30:00Z",
-      "home": "Coventry City Football Club",
-      "away": "AS Monaco",
-      "homeGoals": 2,
-      "awayGoals": 0,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-08-21T19:00:00Z",
-      "home": "Arsenal F.C.",
-      "away": "Coventry City Football Club",
-      "homeGoals": 3,
-      "awayGoals": 0,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-08-25T18:45:00Z",
-      "home": "Plymouth Argyle F.C.",
-      "away": "Coventry City Football Club",
-      "homeGoals": 2,
-      "awayGoals": 4,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-08-29T14:00:00Z",
-      "home": "Coventry City Football Club",
-      "away": "Hull City A.F.C.",
-      "homeGoals": 0,
-      "awayGoals": 1,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-09-05T14:00:00Z",
-      "home": "Manchester City F.C.",
-      "away": "Coventry City Football Club",
-      "homeGoals": 1,
-      "awayGoals": 0,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-09-13T13:00:00Z",
-      "home": "Coventry City Football Club",
-      "away": "Brighton & Hove Albion F.C.",
-      "homeGoals": 0,
-      "awayGoals": 5,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-09-16T19:00:00Z",
-      "home": "Coventry City Football Club",
-      "away": "Aston Villa F.C.",
-      "homeGoals": 1,
-      "awayGoals": 3,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-09-19T16:30:00Z",
-      "home": "Nottingham Forest F.C.",
-      "away": "Coventry City Football Club",
-      "homeGoals": 0,
-      "awayGoals": 1,
-      "teamIsHome": false
-    }
-  ],
-  "Newcastle United F.C.": [
-    {
-      "date": "2026-08-12T16:15:00Z",
-      "home": "Everton F.C.",
-      "away": "Newcastle United F.C.",
-      "homeGoals": 3,
-      "awayGoals": 1,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-08-15T14:00:00Z",
-      "home": "Newcastle United F.C.",
-      "away": "Bayer 04 Leverkusen",
-      "homeGoals": 1,
-      "awayGoals": 2,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-08-16T15:00:00Z",
-      "home": "Newcastle United F.C.",
-      "away": "RC Strasbourg Alsace",
-      "homeGoals": 1,
-      "awayGoals": 1,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-08-23T15:30:00Z",
-      "home": "Newcastle United F.C.",
-      "away": "Liverpool F.C.",
-      "homeGoals": 2,
-      "awayGoals": 2,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-08-26T18:45:00Z",
-      "home": "Newcastle United F.C.",
-      "away": "West Bromwich Albion F.C.",
-      "homeGoals": 3,
-      "awayGoals": 2,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-08-29T16:30:00Z",
-      "home": "Tottenham Hotspur F.C.",
-      "away": "Newcastle United F.C.",
-      "homeGoals": 0,
-      "awayGoals": 2,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-09-05T11:30:00Z",
-      "home": "Newcastle United F.C.",
-      "away": "AFC Bournemouth",
-      "homeGoals": 2,
-      "awayGoals": 2,
-      "teamIsHome": true
-    },
-    {
-      "date": "2026-09-08T19:00:00Z",
-      "home": "Millwall F.C.",
-      "away": "Newcastle United F.C.",
-      "homeGoals": 0,
-      "awayGoals": 1,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-09-14T19:00:00Z",
-      "home": "Leeds United F.C.",
-      "away": "Newcastle United F.C.",
-      "homeGoals": 4,
-      "awayGoals": 1,
-      "teamIsHome": false
-    },
-    {
-      "date": "2026-09-19T14:00:00Z",
-      "home": "Newcastle United F.C.",
-      "away": "Hull City A.F.C.",
-      "homeGoals": 2,
-      "awayGoals": 1,
-      "teamIsHome": true
     }
   ],
   "Chelsea F.C.": [
@@ -817,6 +243,580 @@
       "homeGoals": 2,
       "awayGoals": 1,
       "teamIsHome": false
+    }
+  ],
+  "Hull City A.F.C.": [
+    {
+      "date": "2026-08-08T13:00:00Z",
+      "home": "Eintracht Frankfurt",
+      "away": "Hull City A.F.C.",
+      "homeGoals": 2,
+      "awayGoals": 0,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-08-15T14:00:00Z",
+      "home": "Hull City A.F.C.",
+      "away": "OGC Nice",
+      "homeGoals": 0,
+      "awayGoals": 0,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-08-22T11:30:00Z",
+      "home": "Hull City A.F.C.",
+      "away": "Manchester United F.C.",
+      "homeGoals": 2,
+      "awayGoals": 0,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-08-25T18:45:00Z",
+      "home": "Stoke City F.C.",
+      "away": "Hull City A.F.C.",
+      "homeGoals": 1,
+      "awayGoals": 1,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-08-29T14:00:00Z",
+      "home": "Coventry City Football Club",
+      "away": "Hull City A.F.C.",
+      "homeGoals": 0,
+      "awayGoals": 1,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-09-05T16:30:00Z",
+      "home": "Hull City A.F.C.",
+      "away": "Aston Villa F.C.",
+      "homeGoals": 0,
+      "awayGoals": 0,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-09-08T18:45:00Z",
+      "home": "Sunderland A.F.C.",
+      "away": "Hull City A.F.C.",
+      "homeGoals": 1,
+      "awayGoals": 0,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-09-12T14:00:00Z",
+      "home": "Chelsea F.C.",
+      "away": "Hull City A.F.C.",
+      "homeGoals": 2,
+      "awayGoals": 2,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-09-19T14:00:00Z",
+      "home": "Newcastle United F.C.",
+      "away": "Hull City A.F.C.",
+      "homeGoals": 2,
+      "awayGoals": 1,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-10-11T13:00:00Z",
+      "home": "Hull City A.F.C.",
+      "away": "Everton F.C.",
+      "homeGoals": 2,
+      "awayGoals": 2,
+      "teamIsHome": true
+    }
+  ],
+  "Manchester City F.C.": [
+    {
+      "date": "2026-08-09T11:00:00Z",
+      "home": "Manchester City F.C.",
+      "away": "Atlético Madrid",
+      "homeGoals": 3,
+      "awayGoals": 1,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-08-16T14:00:00Z",
+      "home": "Arsenal F.C.",
+      "away": "Manchester City F.C.",
+      "homeGoals": 3,
+      "awayGoals": 0,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-08-23T13:00:00Z",
+      "home": "Manchester City F.C.",
+      "away": "AFC Bournemouth",
+      "homeGoals": 2,
+      "awayGoals": 1,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-08-28T19:00:00Z",
+      "home": "Crystal Palace F.C.",
+      "away": "Manchester City F.C.",
+      "homeGoals": 1,
+      "awayGoals": 4,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-09-05T14:00:00Z",
+      "home": "Manchester City F.C.",
+      "away": "Coventry City Football Club",
+      "homeGoals": 1,
+      "awayGoals": 0,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-09-08T19:00:00Z",
+      "home": "FC Porto",
+      "away": "Manchester City F.C.",
+      "homeGoals": 0,
+      "awayGoals": 2,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-09-13T15:30:00Z",
+      "home": "Manchester United F.C.",
+      "away": "Manchester City F.C.",
+      "homeGoals": 0,
+      "awayGoals": 1,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-09-17T18:30:00Z",
+      "home": "Manchester City F.C.",
+      "away": "Norwich City F.C.",
+      "homeGoals": 5,
+      "awayGoals": 0,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-09-20T13:00:00Z",
+      "home": "Manchester City F.C.",
+      "away": "Sunderland A.F.C.",
+      "homeGoals": 5,
+      "awayGoals": 3,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-10-11T15:30:00Z",
+      "home": "Liverpool F.C.",
+      "away": "Manchester City F.C.",
+      "homeGoals": 0,
+      "awayGoals": 3,
+      "teamIsHome": false
+    }
+  ],
+  "Ipswich Town F.C.": [
+    {
+      "date": "2026-08-08T14:00:00Z",
+      "home": "Ipswich Town F.C.",
+      "away": "Rayo Vallecano",
+      "homeGoals": 3,
+      "awayGoals": 0,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-08-15T13:30:00Z",
+      "home": "1. FC Union Berlin",
+      "away": "Ipswich Town F.C.",
+      "homeGoals": 2,
+      "awayGoals": 4,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-08-22T14:00:00Z",
+      "home": "Ipswich Town F.C.",
+      "away": "Sunderland A.F.C.",
+      "homeGoals": 2,
+      "awayGoals": 1,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-08-25T18:45:00Z",
+      "home": "Ipswich Town F.C.",
+      "away": "Leicester City F.C.",
+      "homeGoals": 3,
+      "awayGoals": 1,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-08-30T15:30:00Z",
+      "home": "Manchester United F.C.",
+      "away": "Ipswich Town F.C.",
+      "homeGoals": 5,
+      "awayGoals": 2,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-09-04T19:00:00Z",
+      "home": "Ipswich Town F.C.",
+      "away": "Liverpool F.C.",
+      "homeGoals": 0,
+      "awayGoals": 2,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-09-12T14:00:00Z",
+      "home": "Crystal Palace F.C.",
+      "away": "Ipswich Town F.C.",
+      "homeGoals": 2,
+      "awayGoals": 3,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-09-15T19:00:00Z",
+      "home": "Ipswich Town F.C.",
+      "away": "Arsenal F.C.",
+      "homeGoals": 2,
+      "awayGoals": 4,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-09-19T14:00:00Z",
+      "home": "Everton F.C.",
+      "away": "Ipswich Town F.C.",
+      "homeGoals": 1,
+      "awayGoals": 0,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-10-10T14:00:00Z",
+      "home": "Ipswich Town F.C.",
+      "away": "Fulham F.C.",
+      "homeGoals": 2,
+      "awayGoals": 1,
+      "teamIsHome": true
+    }
+  ],
+  "Brentford F.C.": [
+    {
+      "date": "2026-08-08T15:00:00Z",
+      "home": "Stade Rennais F.C.",
+      "away": "Brentford F.C.",
+      "homeGoals": 2,
+      "awayGoals": 4,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-08-15T14:00:00Z",
+      "home": "Brentford F.C.",
+      "away": "Eintracht Frankfurt",
+      "homeGoals": 7,
+      "awayGoals": 0,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-08-22T16:30:00Z",
+      "home": "Brentford F.C.",
+      "away": "Tottenham Hotspur F.C.",
+      "homeGoals": 3,
+      "awayGoals": 0,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-08-25T19:00:00Z",
+      "home": "Birmingham City F.C.",
+      "away": "Brentford F.C.",
+      "homeGoals": 1,
+      "awayGoals": 6,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-08-30T13:00:00Z",
+      "home": "Leeds United F.C.",
+      "away": "Brentford F.C.",
+      "homeGoals": 1,
+      "awayGoals": 1,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-09-05T14:00:00Z",
+      "home": "Brentford F.C.",
+      "away": "Sunderland A.F.C.",
+      "homeGoals": 1,
+      "awayGoals": 1,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-09-12T14:00:00Z",
+      "home": "AFC Bournemouth",
+      "away": "Brentford F.C.",
+      "homeGoals": 2,
+      "awayGoals": 2,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-09-15T19:00:00Z",
+      "home": "Reading F.C.",
+      "away": "Brentford F.C.",
+      "homeGoals": 1,
+      "awayGoals": 2,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-09-18T19:00:00Z",
+      "home": "Brentford F.C.",
+      "away": "Chelsea F.C.",
+      "homeGoals": 3,
+      "awayGoals": 0,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-10-10T14:00:00Z",
+      "home": "Aston Villa F.C.",
+      "away": "Brentford F.C.",
+      "homeGoals": 2,
+      "awayGoals": 2,
+      "teamIsHome": false
+    }
+  ],
+  "Liverpool F.C.": [
+    {
+      "date": "2026-08-09T13:30:00Z",
+      "home": "Liverpool F.C.",
+      "away": "AS Monaco",
+      "homeGoals": 2,
+      "awayGoals": 3,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-08-16T17:00:00Z",
+      "home": "Liverpool F.C.",
+      "away": "Como 1907",
+      "homeGoals": 2,
+      "awayGoals": 0,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-08-23T15:30:00Z",
+      "home": "Newcastle United F.C.",
+      "away": "Liverpool F.C.",
+      "homeGoals": 2,
+      "awayGoals": 2,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-08-29T11:30:00Z",
+      "home": "Liverpool F.C.",
+      "away": "Nottingham Forest F.C.",
+      "homeGoals": 2,
+      "awayGoals": 2,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-09-04T19:00:00Z",
+      "home": "Ipswich Town F.C.",
+      "away": "Liverpool F.C.",
+      "homeGoals": 0,
+      "awayGoals": 2,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-09-09T19:00:00Z",
+      "home": "Liverpool F.C.",
+      "away": "Atlético Madrid",
+      "homeGoals": 2,
+      "awayGoals": 1,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-09-12T14:00:00Z",
+      "home": "Liverpool F.C.",
+      "away": "Fulham F.C.",
+      "homeGoals": 0,
+      "awayGoals": 0,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-09-15T19:00:00Z",
+      "home": "Liverpool F.C.",
+      "away": "Tottenham Hotspur F.C.",
+      "homeGoals": 3,
+      "awayGoals": 1,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-09-20T13:00:00Z",
+      "home": "AFC Bournemouth",
+      "away": "Liverpool F.C.",
+      "homeGoals": 0,
+      "awayGoals": 1,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-10-11T15:30:00Z",
+      "home": "Liverpool F.C.",
+      "away": "Manchester City F.C.",
+      "homeGoals": 0,
+      "awayGoals": 3,
+      "teamIsHome": true
+    }
+  ],
+  "Newcastle United F.C.": [
+    {
+      "date": "2026-08-15T14:00:00Z",
+      "home": "Newcastle United F.C.",
+      "away": "Bayer 04 Leverkusen",
+      "homeGoals": 1,
+      "awayGoals": 2,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-08-16T15:00:00Z",
+      "home": "Newcastle United F.C.",
+      "away": "RC Strasbourg Alsace",
+      "homeGoals": 1,
+      "awayGoals": 1,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-08-23T15:30:00Z",
+      "home": "Newcastle United F.C.",
+      "away": "Liverpool F.C.",
+      "homeGoals": 2,
+      "awayGoals": 2,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-08-26T18:45:00Z",
+      "home": "Newcastle United F.C.",
+      "away": "West Bromwich Albion F.C.",
+      "homeGoals": 3,
+      "awayGoals": 2,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-08-29T16:30:00Z",
+      "home": "Tottenham Hotspur F.C.",
+      "away": "Newcastle United F.C.",
+      "homeGoals": 0,
+      "awayGoals": 2,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-09-05T11:30:00Z",
+      "home": "Newcastle United F.C.",
+      "away": "AFC Bournemouth",
+      "homeGoals": 2,
+      "awayGoals": 2,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-09-08T19:00:00Z",
+      "home": "Millwall F.C.",
+      "away": "Newcastle United F.C.",
+      "homeGoals": 0,
+      "awayGoals": 1,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-09-14T19:00:00Z",
+      "home": "Leeds United F.C.",
+      "away": "Newcastle United F.C.",
+      "homeGoals": 4,
+      "awayGoals": 1,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-09-19T14:00:00Z",
+      "home": "Newcastle United F.C.",
+      "away": "Hull City A.F.C.",
+      "homeGoals": 2,
+      "awayGoals": 1,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-10-12T19:00:00Z",
+      "home": "Coventry City Football Club",
+      "away": "Newcastle United F.C.",
+      "homeGoals": 4,
+      "awayGoals": 1,
+      "teamIsHome": false
+    }
+  ],
+  "Aston Villa F.C.": [
+    {
+      "date": "2026-08-15T13:30:00Z",
+      "home": "Borussia Mönchengladbach",
+      "away": "Aston Villa F.C.",
+      "homeGoals": 2,
+      "awayGoals": 1,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-08-23T13:00:00Z",
+      "home": "Brighton & Hove Albion F.C.",
+      "away": "Aston Villa F.C.",
+      "homeGoals": 4,
+      "awayGoals": 0,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-08-31T19:00:00Z",
+      "home": "Aston Villa F.C.",
+      "away": "Arsenal F.C.",
+      "homeGoals": 0,
+      "awayGoals": 1,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-09-05T16:30:00Z",
+      "home": "Hull City A.F.C.",
+      "away": "Aston Villa F.C.",
+      "homeGoals": 0,
+      "awayGoals": 0,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-09-08T16:45:00Z",
+      "home": "Club Brugge KV",
+      "away": "Aston Villa F.C.",
+      "homeGoals": 2,
+      "awayGoals": 3,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-09-12T14:00:00Z",
+      "home": "Aston Villa F.C.",
+      "away": "Nottingham Forest F.C.",
+      "homeGoals": 1,
+      "awayGoals": 2,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-09-16T19:00:00Z",
+      "home": "Coventry City Football Club",
+      "away": "Aston Villa F.C.",
+      "homeGoals": 1,
+      "awayGoals": 3,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-09-19T11:30:00Z",
+      "home": "Tottenham Hotspur F.C.",
+      "away": "Aston Villa F.C.",
+      "homeGoals": 2,
+      "awayGoals": 3,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-10-02T18:30:00Z",
+      "home": "Sevilla FC",
+      "away": "Aston Villa F.C.",
+      "homeGoals": 1,
+      "awayGoals": 3,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-10-10T14:00:00Z",
+      "home": "Aston Villa F.C.",
+      "away": "Brentford F.C.",
+      "homeGoals": 2,
+      "awayGoals": 2,
+      "teamIsHome": true
     }
   ]
 }
