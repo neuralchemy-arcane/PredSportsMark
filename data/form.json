@@ -329,14 +329,6 @@
   ],
   "Manchester City F.C.": [
     {
-      "date": "2026-08-09T11:00:00Z",
-      "home": "Manchester City F.C.",
-      "away": "Atlético Madrid",
-      "homeGoals": 3,
-      "awayGoals": 1,
-      "teamIsHome": true
-    },
-    {
       "date": "2026-08-16T14:00:00Z",
       "home": "Arsenal F.C.",
       "away": "Manchester City F.C.",
@@ -407,6 +399,14 @@
       "homeGoals": 0,
       "awayGoals": 3,
       "teamIsHome": false
+    },
+    {
+      "date": "2026-10-14T19:00:00Z",
+      "home": "Manchester City F.C.",
+      "away": "Paris Saint-Germain F.C.",
+      "homeGoals": 2,
+      "awayGoals": 4,
+      "teamIsHome": true
     }
   ],
   "Ipswich Town F.C.": [
@@ -575,14 +575,6 @@
   ],
   "Liverpool F.C.": [
     {
-      "date": "2026-08-09T13:30:00Z",
-      "home": "Liverpool F.C.",
-      "away": "AS Monaco",
-      "homeGoals": 2,
-      "awayGoals": 3,
-      "teamIsHome": true
-    },
-    {
       "date": "2026-08-16T17:00:00Z",
       "home": "Liverpool F.C.",
       "away": "Como 1907",
@@ -653,6 +645,14 @@
       "homeGoals": 0,
       "awayGoals": 3,
       "teamIsHome": true
+    },
+    {
+      "date": "2026-10-14T16:45:00Z",
+      "home": "LASK",
+      "away": "Liverpool F.C.",
+      "homeGoals": 3,
+      "awayGoals": 6,
+      "teamIsHome": false
     }
   ],
   "Newcastle United F.C.": [
@@ -739,14 +739,6 @@
   ],
   "Aston Villa F.C.": [
     {
-      "date": "2026-08-15T13:30:00Z",
-      "home": "Borussia Mönchengladbach",
-      "away": "Aston Villa F.C.",
-      "homeGoals": 2,
-      "awayGoals": 1,
-      "teamIsHome": false
-    },
-    {
       "date": "2026-08-23T13:00:00Z",
       "home": "Brighton & Hove Albion F.C.",
       "away": "Aston Villa F.C.",
@@ -816,6 +808,14 @@
       "away": "Brentford F.C.",
       "homeGoals": 2,
       "awayGoals": 2,
+      "teamIsHome": true
+    },
+    {
+      "date": "2026-10-14T19:00:00Z",
+      "home": "Aston Villa F.C.",
+      "away": "Fenerbahçe SK",
+      "homeGoals": 6,
+      "awayGoals": 0,
       "teamIsHome": true
     }
   ]
