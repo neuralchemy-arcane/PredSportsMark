@@ -165,14 +165,6 @@
   ],
   "Aston Villa F.C.": [
     {
-      "date": "2026-08-31T19:00:00Z",
-      "home": "Aston Villa F.C.",
-      "away": "Arsenal F.C.",
-      "homeGoals": 0,
-      "awayGoals": 1,
-      "teamIsHome": true
-    },
-    {
       "date": "2026-09-05T16:30:00Z",
       "home": "Hull City A.F.C.",
       "away": "Aston Villa F.C.",
@@ -243,6 +235,14 @@
       "homeGoals": 0,
       "awayGoals": 1,
       "teamIsHome": false
+    },
+    {
+      "date": "2026-10-21T19:00:00Z",
+      "home": "Aston Villa F.C.",
+      "away": "Viking FK",
+      "homeGoals": 3,
+      "awayGoals": 1,
+      "teamIsHome": true
     }
   ],
   "Manchester City F.C.": [
@@ -493,14 +493,6 @@
   ],
   "Arsenal F.C.": [
     {
-      "date": "2026-08-21T19:00:00Z",
-      "home": "Arsenal F.C.",
-      "away": "Coventry City Football Club",
-      "homeGoals": 3,
-      "awayGoals": 0,
-      "teamIsHome": true
-    },
-    {
       "date": "2026-08-31T19:00:00Z",
       "home": "Aston Villa F.C.",
       "away": "Arsenal F.C.",
@@ -570,6 +562,14 @@
       "away": "Arsenal F.C.",
       "homeGoals": 0,
       "awayGoals": 1,
+      "teamIsHome": false
+    },
+    {
+      "date": "2026-10-21T19:00:00Z",
+      "home": "FC Bayern Munich",
+      "away": "Arsenal F.C.",
+      "homeGoals": 2,
+      "awayGoals": 2,
       "teamIsHome": false
     }
   ],
