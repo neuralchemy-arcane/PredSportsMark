@@ -2,23 +2,23 @@
   {
     "teams": [
       {
-        "name": "Crystal Palace F.C.",
-        "short_name": "Palace",
-        "short_code": "CRY",
-        "kgmid": "/m/0223bl",
-        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/8piQOzndGmApKYTcvyN9vA_500x500.png",
-        "score": 3,
-        "score_original": "3",
-        "win": true
+        "name": "Everton F.C.",
+        "short_name": "Everton",
+        "short_code": "EVE",
+        "kgmid": "/m/0mmd6",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/C3J47ea36cMBc4XPbp9aaA_500x500.png",
+        "score": 0,
+        "score_original": "0"
       },
       {
-        "name": "Nottingham Forest F.C.",
-        "short_name": "Nottm Forest",
-        "short_code": "NFO",
-        "kgmid": "/m/014nzp",
-        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/Zr6FbE-8pDH7UBpWCO8U9A_500x500.png",
-        "score": 1,
-        "score_original": "1"
+        "name": "Chelsea F.C.",
+        "short_name": "Chelsea",
+        "short_code": "CHE",
+        "kgmid": "/m/023fb",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/fhBITrIlbQxhVB6IjxUO6Q_500x500.png",
+        "score": 2,
+        "score_original": "2",
+        "win": true
       }
     ],
     "league": {
@@ -27,53 +27,54 @@
       "kgmid": "/m/02_tc"
     },
     "venue": {
-      "name": "Selhurst Park Stadium",
-      "alt_name": "Selhurst Park",
-      "location": "London",
-      "kgmid": "/m/0328hf"
+      "name": "Hill Dickinson Stadium",
+      "location": "Liverpool",
+      "kgmid": "/g/11c6_twtlz"
     },
     "status": "finished",
     "status_original": "FT",
-    "kgmid": "/g/11nqdd6cjp",
-    "serpapi_link": "https://serpapi.com/search.json?engine=google_sports&hl=en&kgmid=%2Fg%2F11nqdd6cjp&sp=ft&type=game",
-    "start_time": "2026-10-11T13:00:00Z",
-    "end_time": "2026-10-11T14:58:02Z",
+    "kgmid": "/g/11zg365shs",
+    "serpapi_link": "https://serpapi.com/search.json?engine=google_sports&hl=en&kgmid=%2Fg%2F11zg365shs&sp=ft&type=game",
+    "start_time": "2026-10-17T11:30:00Z",
+    "end_time": "2026-10-17T13:33:31Z",
     "highlights": [
       {
         "title": "Match recap",
-        "source_title": "Crystal Palace v. Nottingham Forest | PREMIER LEAGUE HIGHLIGHTS | 10/11/2026 | NBC Sports",
-        "link": "https://www.youtube.com/watch?v=0XsbXdj3aLk&feature=onebox",
-        "duration": "12:20",
-        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/videos/vita/f5Anx8jSKPHDj09q_768x432.jpg",
-        "posted_at": "2026-10-11T15:45:11Z"
+        "source_title": "Everton v. Chelsea | PREMIER LEAGUE HIGHLIGHTS | 10/17/2026",
+        "link": "https://www.youtube.com/watch?v=eXsWnTusr2o&feature=onebox",
+        "duration": "9:02",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/videos/vita/Pm1seL4Ld2oLiYRb_768x432.jpg",
+        "posted_at": "2026-10-17T14:09:06Z"
       },
       {
         "title": "Match recap",
-        "link": "https://nbcsports.com/stories/games/6acba5225d2d4ba76d36561f.html",
-        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/videos/vita/P5gsB4Jhmpbxmrwg_768x432.jpg",
-        "posted_at": "2026-10-11T15:03:25Z"
+        "link": "https://nbcsports.com/stories/games/6ad37aea5019c9af91ab5342.html",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/videos/vita/lvRpZ3z8-LeuNaDP_768x432.jpg",
+        "posted_at": "2026-10-17T13:41:19Z"
       }
     ]
   },
   {
     "teams": [
       {
+        "name": "Fulham F.C.",
+        "short_name": "Fulham",
+        "short_code": "FUL",
+        "kgmid": "/m/02_lt",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/Gh7_5p3n364p4vxeM8FhNg_500x500.png",
+        "score": 1,
+        "score_original": "1",
+        "red_card": true,
+        "win": true
+      },
+      {
         "name": "Hull City A.F.C.",
         "short_name": "Hull",
         "short_code": "HUL",
         "kgmid": "/m/02b2np",
         "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/riiyZbb1JHuFQgZ3831jUQ_500x500.png",
-        "score": 2,
-        "score_original": "2"
-      },
-      {
-        "name": "Everton F.C.",
-        "short_name": "Everton",
-        "short_code": "EVE",
-        "kgmid": "/m/0mmd6",
-        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/C3J47ea36cMBc4XPbp9aaA_500x500.png",
-        "score": 2,
-        "score_original": "2"
+        "score": 0,
+        "score_original": "0"
       }
     ],
     "league": {
@@ -82,30 +83,30 @@
       "kgmid": "/m/02_tc"
     },
     "venue": {
-      "name": "MKM Stadium",
-      "location": "Kingston upon Hull",
-      "kgmid": "/m/02kcyv"
+      "name": "Craven Cottage",
+      "location": "London",
+      "kgmid": "/m/01yg0"
     },
     "status": "finished",
     "status_original": "FT",
-    "kgmid": "/g/11zg363f_6",
-    "serpapi_link": "https://serpapi.com/search.json?engine=google_sports&hl=en&kgmid=%2Fg%2F11zg363f_6&sp=ft&type=game",
-    "start_time": "2026-10-11T13:00:00Z",
-    "end_time": "2026-10-11T14:56:41Z",
+    "kgmid": "/g/11nqdf52pf",
+    "serpapi_link": "https://serpapi.com/search.json?engine=google_sports&hl=en&kgmid=%2Fg%2F11nqdf52pf&sp=ft&type=game",
+    "start_time": "2026-10-17T14:00:00Z",
+    "end_time": "2026-10-17T15:51:32Z",
     "highlights": [
       {
         "title": "Match recap",
-        "source_title": "Hull City v. Everton | PREMIER LEAGUE HIGHLIGHTS | 10/11/2026 | NBC Sports",
-        "link": "https://www.youtube.com/watch?v=B-TtJxQ9W10&feature=onebox",
-        "duration": "10:24",
-        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/videos/vita/vwfA4mSP9jotoGzn_768x432.jpg",
-        "posted_at": "2026-10-11T15:36:10Z"
+        "source_title": "Fulham v. Hull City | PREMIER LEAGUE HIGHLIGHTS | 10/17/2026",
+        "link": "https://www.youtube.com/watch?v=Wv2e6iihj0o&feature=onebox",
+        "duration": "9:24",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/videos/vita/fcqqInFvUAry0m8I_768x432.jpg",
+        "posted_at": "2026-10-17T17:30:08Z"
       },
       {
         "title": "Match recap",
-        "link": "https://nbcsports.com/stories/games/6acb8972de545658616a7c0e.html",
-        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/videos/vita/nFSLpHttfRi8o4Rw_768x432.jpg",
-        "posted_at": "2026-10-11T13:06:10Z"
+        "link": "https://nbcsports.com/stories/games/6ad380e387266075602d8856.html",
+        "thumbnail": "https://ssl.gstatic.com/onebox/media/sports/videos/vita/a3rjZCHDjbbHI5sc_768x432.jpg",
+        "posted_at": "2026-10-17T14:06:38Z"
       }
     ]
   }
