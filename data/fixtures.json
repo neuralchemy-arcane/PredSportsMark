@@ -1,41 +1,5 @@
 [
   {
-    "date": "2026-11-01T16:30:00Z",
-    "status": "upcoming",
-    "league": "Premier League",
-    "venue": "Anfield",
-    "home": {
-      "name": "Liverpool F.C.",
-      "kgmid": "/m/04ltf",
-      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/nGfV05dipbAc7zzojivKew_500x500.png"
-    },
-    "away": {
-      "name": "Arsenal F.C.",
-      "kgmid": "/m/0xbm",
-      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/4us2nCgl6kgZc0t3hpW75Q_500x500.png"
-    },
-    "homeGoals": null,
-    "awayGoals": null
-  },
-  {
-    "date": "2026-11-02T20:00:00Z",
-    "status": "upcoming",
-    "league": "Premier League",
-    "venue": "St. James Park",
-    "home": {
-      "name": "Newcastle United F.C.",
-      "kgmid": "/m/0fvly",
-      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/96CcNNQ0AYDAbssP0V9LuQ_500x500.png"
-    },
-    "away": {
-      "name": "Everton F.C.",
-      "kgmid": "/m/0mmd6",
-      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/C3J47ea36cMBc4XPbp9aaA_500x500.png"
-    },
-    "homeGoals": null,
-    "awayGoals": null
-  },
-  {
     "date": "2026-11-06T20:00:00Z",
     "status": "upcoming",
     "league": "Premier League",
