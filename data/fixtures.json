@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-11-06T20:00:00Z",
-    "status": "upcoming",
-    "league": "Premier League",
-    "venue": "Hill Dickinson Stadium",
-    "home": {
-      "name": "Everton F.C.",
-      "kgmid": "/m/0mmd6",
-      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/C3J47ea36cMBc4XPbp9aaA_500x500.png"
-    },
-    "away": {
-      "name": "Coventry City Football Club",
-      "kgmid": "/m/0284gc",
-      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/KHpmY4tIwqiutl8Cfl0MAw_500x500.png"
-    },
-    "homeGoals": null,
-    "awayGoals": null
-  },
-  {
     "date": "2026-11-07T12:30:00Z",
     "status": "upcoming",
     "league": "Premier League",
@@ -337,6 +319,24 @@
       "name": "Manchester United F.C.",
       "kgmid": "/m/050fh",
       "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/udQ6ns69PctCv143h-GeYw_500x500.png"
+    },
+    "homeGoals": null,
+    "awayGoals": null
+  },
+  {
+    "date": "2026-11-23T20:00:00Z",
+    "status": "upcoming",
+    "league": "Premier League",
+    "venue": "Gtech Community Stadium",
+    "home": {
+      "name": "Brentford F.C.",
+      "kgmid": "/m/02b0y3",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/QOUce0WQBYqnkSmN6_TxGA_500x500.png"
+    },
+    "away": {
+      "name": "Everton F.C.",
+      "kgmid": "/m/0mmd6",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/C3J47ea36cMBc4XPbp9aaA_500x500.png"
     },
     "homeGoals": null,
     "awayGoals": null

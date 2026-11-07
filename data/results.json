@@ -1,5 +1,23 @@
 [
   {
+    "date": "2026-11-06T20:00:00Z",
+    "status": "finished",
+    "league": "Premier League",
+    "venue": "Hill Dickinson Stadium",
+    "home": {
+      "name": "Everton F.C.",
+      "kgmid": "/m/0mmd6",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/C3J47ea36cMBc4XPbp9aaA_500x500.png"
+    },
+    "away": {
+      "name": "Coventry City Football Club",
+      "kgmid": "/m/0284gc",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/KHpmY4tIwqiutl8Cfl0MAw_500x500.png"
+    },
+    "homeGoals": 3,
+    "awayGoals": 1
+  },
+  {
     "date": "2026-11-02T20:00:00Z",
     "status": "finished",
     "league": "Premier League",
@@ -357,24 +375,6 @@
       "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/Zr6FbE-8pDH7UBpWCO8U9A_500x500.png"
     },
     "homeGoals": 1,
-    "awayGoals": 1
-  },
-  {
-    "date": "2026-10-19T19:00:00Z",
-    "status": "finished",
-    "league": "Premier League",
-    "venue": "Tottenham Hotspur Stadium",
-    "home": {
-      "name": "Tottenham Hotspur F.C.",
-      "kgmid": "/m/0hvjr",
-      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/k3Q_mKE98Dnohrcea0JFgQ_500x500.png"
-    },
-    "away": {
-      "name": "Coventry City Football Club",
-      "kgmid": "/m/0284gc",
-      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/KHpmY4tIwqiutl8Cfl0MAw_500x500.png"
-    },
-    "homeGoals": 3,
     "awayGoals": 1
   }
 ]
