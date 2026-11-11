@@ -178,5 +178,77 @@
     },
     "homeGoals": null,
     "awayGoals": null
+  },
+  {
+    "date": "2026-11-27T20:00:00Z",
+    "status": "upcoming",
+    "league": "Premier League",
+    "venue": "City Ground",
+    "home": {
+      "name": "Nottingham Forest F.C.",
+      "kgmid": "/m/014nzp",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/Zr6FbE-8pDH7UBpWCO8U9A_500x500.png"
+    },
+    "away": {
+      "name": "Chelsea F.C.",
+      "kgmid": "/m/023fb",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/fhBITrIlbQxhVB6IjxUO6Q_500x500.png"
+    },
+    "homeGoals": null,
+    "awayGoals": null
+  },
+  {
+    "date": "2026-11-28T15:00:00Z",
+    "status": "upcoming",
+    "league": "Premier League",
+    "venue": "Old Trafford",
+    "home": {
+      "name": "Manchester United F.C.",
+      "kgmid": "/m/050fh",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/udQ6ns69PctCv143h-GeYw_500x500.png"
+    },
+    "away": {
+      "name": "Brentford F.C.",
+      "kgmid": "/m/02b0y3",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/QOUce0WQBYqnkSmN6_TxGA_500x500.png"
+    },
+    "homeGoals": null,
+    "awayGoals": null
+  },
+  {
+    "date": "2026-11-28T15:00:00Z",
+    "status": "upcoming",
+    "league": "Premier League",
+    "venue": "Elland Road",
+    "home": {
+      "name": "Leeds United F.C.",
+      "kgmid": "/m/01xn7x1",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/5dqfOKpjjW6EwTAx_FysKQ_500x500.png"
+    },
+    "away": {
+      "name": "Coventry City Football Club",
+      "kgmid": "/m/0284gc",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/KHpmY4tIwqiutl8Cfl0MAw_500x500.png"
+    },
+    "homeGoals": null,
+    "awayGoals": null
+  },
+  {
+    "date": "2026-11-28T17:30:00Z",
+    "status": "upcoming",
+    "league": "Premier League",
+    "venue": "Portman Road Stadium",
+    "home": {
+      "name": "Ipswich Town F.C.",
+      "kgmid": "/m/01zhs3",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/56vquJBk5U16Dng7txLXCw_500x500.png"
+    },
+    "away": {
+      "name": "Aston Villa F.C.",
+      "kgmid": "/m/0bl8l",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/uyNNelfnFvCEnsLrUL-j2Q_500x500.png"
+    },
+    "homeGoals": null,
+    "awayGoals": null
   }
 ]
