@@ -520,5 +520,23 @@
     },
     "homeGoals": null,
     "awayGoals": null
+  },
+  {
+    "date": "2026-12-03T20:00:00Z",
+    "status": "upcoming",
+    "league": "Premier League",
+    "venue": "Tottenham Hotspur Stadium",
+    "home": {
+      "name": "Tottenham Hotspur F.C.",
+      "kgmid": "/m/0hvjr",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/k3Q_mKE98Dnohrcea0JFgQ_500x500.png"
+    },
+    "away": {
+      "name": "Fulham F.C.",
+      "kgmid": "/m/02_lt",
+      "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/optimized/Gh7_5p3n364p4vxeM8FhNg_500x500.png"
+    },
+    "homeGoals": null,
+    "awayGoals": null
   }
 ]
